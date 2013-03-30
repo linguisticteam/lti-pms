@@ -5,7 +5,7 @@
             <?php
                 echo form_open('login/process','name="process"');
             ?>        
-            <h4 style="text-align: center">User Login Xyz</h4>
+            <h4 style="text-align: center">User Login Ok</h4>
             <br />
             <?php
                 if(! is_null($msg)) echo $msg;
