@@ -1,14 +1,11 @@
 <?php
-$id = $this->uri->segment(5);
+$id = $this->uri->segment(3);
 
 if ($id==NULL) redirect('users');
 
 $query = $this->users_model->get_users($id);
 
 $user_role = $this->session->userdata('user_role');
-
-$team = $this->session->userdata('teamdata');
-
 
 $roles  = unserialize(USER_ROLES);
 $states = unserialize(USER_STATES);
@@ -21,7 +18,7 @@ $states = unserialize(USER_STATES);
             <legend>Edit profile</legend>
 
             <?php
-                echo form_open('languages/'.$team->shortname.'/users/edit_profile/'.$id,'class="custom"');
+                echo form_open('users/edit_profile/'.$id,'class="custom"');
             ?>
 
             <div class="row">
@@ -51,7 +48,7 @@ $states = unserialize(USER_STATES);
                 <div class="large-6 columns">
                     <?php echo form_label('E-mail'); ?>
                     <div class="row collapse">
-                        <?php echo form_input(array('id'=>'email','name'=>'email'), set_value('email',$query->email),'disabled="disabled"'); ?>
+                        <?php echo form_input(array('id'=>'email','name'=>'email'), set_value('email',$query->email),'readonly="readonly"'); ?>
                     </div>
                 </div>
             </div>

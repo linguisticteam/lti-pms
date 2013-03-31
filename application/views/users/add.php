@@ -89,8 +89,9 @@
 
             <div class="row">
                 <div class="large-6 columns">
+                    <?php echo form_hidden(array('password'=>'lti')); ?>
                     <?php echo form_hidden(array('language_id'=>$team->id)); ?>
-                    <?php echo form_hidden(array('state'=>USER_STATE_WAINTING_CONFIRMATION)); ?>
+                    <?php echo form_hidden(array('state'=>USER_STATE_ACTIVE)); ?>
                     <?php echo form_hidden(array('role'=>USER_ROLE_TRANSLATOR)); ?>
                     <?php echo form_hidden(array('description'=>'')); ?>
                     <?php echo form_submit('submit','Add user','class="button"'); ?>

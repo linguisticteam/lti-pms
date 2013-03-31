@@ -95,12 +95,11 @@ class Users_model extends CI_Model
     {
         if ($data!=NULL && $condition!=NULL)
         {
-            $this->db->update('users',$data,$condition);
+            $this->db->update('users',$data,$condition);            
             
-            $team = $this->session->userdata('teamdata');
             $this->session->set_userdata('user_profile_edited','User profile edited successfully');
             
-            redirect('languages/'.$team->shortname.'/users/edit_profile/'.$condition['id']);
+            redirect('users/edit_profile/'.$condition['id']);
         }
     }
 }

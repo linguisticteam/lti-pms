@@ -72,5 +72,5 @@ if (!empty($videos_inprogress))
 }
 else
 {
-    
+    echo '<div class="alert-box ">There is no videos in transcribing!</div>';
 }

@@ -34,9 +34,10 @@ class Users extends CI_Controller {
         $this->form_validation->set_rules('email','EMAIL','trim|required|valid_email|is_unique[users.email]');
 
         if ($this->form_validation->run()==TRUE):
-            $data = elements(array('name','email','language_id',
+            $data = elements(array('name','email','password','language_id',
                                    'dotsub_id','pootle_id','facebook_id','skype_id',
                                    'state','role','description','date_added'),$this->input->post());
+        $data['password'] = md5($data['password']);
             $this->users_model->insert_user($data);
         endif;
 
@@ -76,15 +77,15 @@ class Users extends CI_Controller {
     
     public function view()
     {
-        $shortname = $this->uri->segment(2);
+//        $shortname = $this->uri->segment(2);
+//        
+//        $team = $this->language_teams_model->get_language_team_by_shortname($shortname);
         
-        $team = $this->language_teams_model->get_language_team_by_shortname($shortname);
-        
-        $this->session->set_userdata('teamdata', $team);
+//        $this->session->set_userdata('teamdata', $team);
         
         $data = array(
             'title' => 'View user info',
-            'type' => 'team',
+            'type' => 'user',
             'view' => 'users/view'
         );
         $this->load->view('controlpanel',$data);
@@ -92,17 +93,16 @@ class Users extends CI_Controller {
     
     public function edit_profile()
     {
-        $shortname = $this->uri->segment(2);
-
-        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_shortname($shortname));
+//        $shortname = $this->uri->segment(2);
+//
+//        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_shortname($shortname));
 
         $this->form_validation->set_rules('name','NAME','trim|required|max_length[255]');
-//        $this->form_validation->set_rules('current_password','CURRENT PASSWORD','trim|required|callback_password_matches['.$this->input->post('id').']');
-        $this->form_validation->set_rules('password','PASSWORD','trim|required|min_length[3]|matches[password2]|md5');
+        $this->form_validation->set_rules('password','PASSWORD','trim|required|min_length[3]|matches[password2]');
         $this->form_validation->set_rules('password2','REPEAT PASSWORD','trim|required|min_length[3]');
 
         if ($this->form_validation->run()==TRUE):
-            $data = elements(array('name','dotsub_id','pootle_id','facebook_id','skype_id',
+            $data = elements(array('name','password','dotsub_id','pootle_id','facebook_id','skype_id',
                                    'description'),$this->input->post());     
             $data['password'] = md5($data['password']);
             $this->users_model->update_user_profile($data,array('id'=>$this->input->post('id')));
@@ -110,7 +110,7 @@ class Users extends CI_Controller {
 
         $data = array(
             'title' => 'Edit profile',
-            'type' => 'team',
+            'type' => 'user',
             'view' => 'users/edit_profile'
         );
 

@@ -10,7 +10,7 @@ $states = unserialize(MEDIA_STATES);
 $categories = unserialize(MEDIA_CATEGORIES);
 
 if (!empty($videos_inprogress))
-{    
+{
     $videos = array();
 
     if (is_array($videos_inprogress))
@@ -36,8 +36,8 @@ if (!empty($videos_inprogress))
         $f = (!empty($item->forum_thread)) ? '<a href="'.$item->forum_thread.'" target="_blank">go</a>' : '';
         $n = (!empty($item->notes)) ? '<a href="'.$item->notes.'" target="_blank">go</a>' : '';
 
-        $this->table->add_row($i, 
-                              '<span title="'.$item->description.'"><a href="'.$item->original_location.'" target="_blank"><strong>'.$item->title.'</strong></a></span>', 
+        $this->table->add_row($i,
+                              '<span title="'.$item->description.'"><a href="'.$item->original_location.'" target="_blank"><strong>'.$item->title.'</strong></a></span>',
                               $states[$item->state], $categories[$item->category],
                               '<input name="tipo'.$i.'" type="radio" class="star required" value="1" disabled="disabled" '.($item->priority==1?'checked="checked"':'').'/>'.
                               '<input name="tipo'.$i.'" type="radio" class="star" value="2" disabled="disabled" '.($item->priority==2?'checked="checked"':'').'/>'.
@@ -49,7 +49,7 @@ if (!empty($videos_inprogress))
                               ($user_role >= USER_ROLE_TRANSCRIBER)?
                               (count($transcribers)>1?implode(", ", $transcribers):$transcribers[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/open_for_translation','I did it!')):
                               (count($transcribers)>1?implode(", ", $transcribers):$transcribers[0]),
-                              ($user_role >= USER_ROLE_TRANSCRIBER)?  
+                              ($user_role >= USER_ROLE_TRANSCRIBER)?
                               (count($first_proofs)>1?implode(", ", $first_proofs):$first_proofs[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FIRST_PROOFREAD.'/open_for_translation','I did it!')):
                               (count($first_proofs)>1?implode(", ", $first_proofs):$first_proofs[0]),
                               ($user_role >= USER_ROLE_TRANSCRIBER)?

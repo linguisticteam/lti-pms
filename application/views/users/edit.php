@@ -85,7 +85,7 @@ else
                 <div class="large-6 columns">
                     <?php echo form_label('Facebook ID'); ?>
                     <div class="row collapse">
-                        <?php echo form_input(array('id'=>'facebook_id','name'=>'facebook_id'), set_value('facebook_id')); ?>
+                        <?php echo form_input(array('id'=>'facebook_id','name'=>'facebook_id'), set_value('facebook_id',$query->facebook_id)); ?>
                     </div>
                 </div>
             </div>

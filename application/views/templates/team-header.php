@@ -101,14 +101,21 @@
                     {
                     ?>
                     <li class="has-dropdown"><?php echo anchor('languages/'.$team->shortname.'/users', 'Users'); ?>
-
+                        
+                        <?php
+                        if ( ($user_role>=USER_ROLE_COORDINATION && $user_language==$team->id) || ($user_role==USER_ROLE_ADMINISTRATOR) )
+                        {
+                        ?>
                         <ul class="dropdown">
                             <li><?php echo anchor('languages/'.$team->shortname.'/users/add', 'Add user'); ?></li>
                         </ul>
+                        <?php
+                        }
+                        ?>
                     </li>
                     <li class="divider"></li>
-                    <?php                     
-                    } 
+                    <?php
+                    }
                     ?>
                 </ul>
 
@@ -118,9 +125,10 @@
                     <?php
                     if ($user_name!=NULL)
                     {
-                    ?>                    
-                    <li class="has-dropdown"><?php echo anchor('languages/'.$team->shortname.'/users/view/'.$user_id, '('.$user_name.')' ); ?>
-                        <ul class="dropdown">                            
+                    ?>
+                    <li class="has-dropdown"><?php echo anchor('/users/view/'.$user_id, '('.$user_name.')' ); ?>
+                        <ul class="dropdown">
+                            <li><?php echo anchor('users/edit_profile/'.$user_id, 'Edit profile' ); ?></li>
                             <li><?php echo anchor('home/do_logout', 'Sign Out'); ?></li>
                         </ul>
                     </li>
@@ -129,11 +137,10 @@
                     else
                     {
                     ?>
-                    <li><?php echo anchor('', '('.$user_name.') Sign In'); ?></li>
+                    <li><?php echo anchor('', 'Sign In'); ?></li>
                     <?php
                     }
                     ?>
-                    
                 </ul>
             </section>
         </nav>
