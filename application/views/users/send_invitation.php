@@ -18,12 +18,11 @@ $query = $this->users_model->get_users($id);
         $config['charset'] = 'utf-8';
         $config['wordwrap'] = TRUE;
         $config['mailtype'] = 'html';
-//        $config['protocol'] = 'mail';
         
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-        $config['smtp_user'] = 'michaelycus@gmail.com';
-        $config['smtp_pass'] = 'shoryuken';
+        $config['smtp_user'] = 'michaelmarquesbr@gmail.com';
+        $config['smtp_pass'] = 'usedforsmtp23';
         $config['smtp_port'] = '465'; 
         
         

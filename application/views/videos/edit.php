@@ -304,6 +304,18 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                             <button type="button" onclick="register_transcriber()" class="small button secondary">Add</button>
                         </div>
                     </div>
+                    
+                    <div class="row">
+                        <div class="small-9 columns">
+                            <?php 
+                            echo form_input(array('id'=>'transcriber_name','name'=>'transcriber_name'),''); ?>
+                            ?>
+                        </div>
+                        <div class="small-3 columns">
+                            <button type="button" onclick="register_transcriber_name()" class="small button secondary">Add</button>
+                        </div>
+                    </div>
+                    
                     <div class="row collapse">
                         <div class="small-12 columns">
                             <p>

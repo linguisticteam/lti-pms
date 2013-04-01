@@ -16,10 +16,6 @@ class Login_model extends CI_Model
         // Prep the query
         $this->db->where('email', $username);
         $this->db->where('password', md5($password));
-        
-        $password2 = md5($password);
-        
-        echo $password2;
 
         // Run the query
         $query = $this->db->get('pms_users');
