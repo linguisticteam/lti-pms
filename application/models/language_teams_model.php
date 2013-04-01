@@ -9,7 +9,7 @@ class Language_teams_model extends CI_Model
             $this->db->where('id',$id);
         }
 
-        $query = $this->db->get('language_teams');
+        $query = $this->db->get('pms_language_teams');
 
         $appended_language_teams_array = array();
 

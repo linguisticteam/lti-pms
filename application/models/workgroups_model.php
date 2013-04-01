@@ -6,7 +6,7 @@ class Workgroups_model extends CI_Model
     {
         $where = 'media_id ='.$media_id.' AND user_id ='. $user_id. ' AND function ='. $function;
         $this->db->where($where);
-        $query = $this->db->get('workgroups');
+        $query = $this->db->get('pms_workgroups');
         
         if ($query->num_rows() > 0)
         {
@@ -22,7 +22,7 @@ class Workgroups_model extends CI_Model
                 'order' => $this->get_users_count($media_id,$function) + 1,
              );
 
-            $this->db->insert('workgroups', $data); 
+            $this->db->insert('pms_workgroups', $data); 
         }
     }
     
@@ -30,6 +30,6 @@ class Workgroups_model extends CI_Model
     {
         $this->db->where('media_id',$media_id);
         $this->db->where('function',$function);
-        return $this->db->count_all_results('workgroups');
+        return $this->db->count_all_results('pms_workgroups');
     }
 }

@@ -22,7 +22,7 @@ class Login_model extends CI_Model
         echo $password2;
 
         // Run the query
-        $query = $this->db->get('users');
+        $query = $this->db->get('pms_users');
         // Let's check if there are any results
         if($query->num_rows == 1)
         {

@@ -116,4 +116,14 @@ class Users extends CI_Controller {
 
         $this->load->view('controlpanel',$data);
     }
+    
+    public function send_invitation()
+    {        
+        $data = array(
+            'title' => 'View user info',
+            'type' => 'user',
+            'view' => 'users/send_invitation'
+        );
+        $this->load->view('controlpanel',$data);
+    }
 }

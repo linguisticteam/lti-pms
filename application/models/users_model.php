@@ -9,7 +9,7 @@ class Users_model extends CI_Model
             $this->db->where('id',$id);
         }
 
-        $query = $this->db->get('users');
+        $query = $this->db->get('pms_users');
 
         $appended_users_array = array();
 
@@ -37,7 +37,7 @@ class Users_model extends CI_Model
         $where = 'media_id = '.$media_id. ' AND function = '. $function;
         $this->db->where($where);
         $this->db->order_by("order", "asc"); 
-        $query = $this->db->get('workgroups');
+        $query = $this->db->get('pms_workgroups');
  
        if($query->num_rows() > 0)
         {
@@ -60,7 +60,7 @@ class Users_model extends CI_Model
         $where = 'language_id = '.$language_id;
         $this->db->where($where);
         $this->db->order_by("name", "asc"); 
-        $query = $this->db->get('users');
+        $query = $this->db->get('pms_users');
  
         return $query->result();
     }
@@ -69,7 +69,7 @@ class Users_model extends CI_Model
     {
         if ($data!=NULL)
         {
-            $this->db->insert('users',$data);
+            $this->db->insert('pms_users',$data);
             
             $team = $this->session->userdata('teamdata');
             $this->session->set_userdata('user_added','User added successfully');
@@ -82,7 +82,7 @@ class Users_model extends CI_Model
     {
         if ($data!=NULL && $condition!=NULL)
         {
-            $this->db->update('users',$data,$condition);
+            $this->db->update('pms_users',$data,$condition);
             
             $team = $this->session->userdata('teamdata');
             $this->session->set_userdata('user_edited','User edited successfully');
@@ -95,7 +95,7 @@ class Users_model extends CI_Model
     {
         if ($data!=NULL && $condition!=NULL)
         {
-            $this->db->update('users',$data,$condition);            
+            $this->db->update('pms_users',$data,$condition);            
             
             $this->session->set_userdata('user_profile_edited','User profile edited successfully');
             

@@ -9,7 +9,7 @@ class Medias_model extends CI_Model
             $this->db->where('id',$id);
         }
 
-        $query = $this->db->get('medias');
+        $query = $this->db->get('pms_medias');
 
         $appended_medias_array = array();
 
@@ -95,7 +95,7 @@ class Medias_model extends CI_Model
     {
         if ($data!=NULL)
         {
-            $this->db->insert('medias',$data);
+            $this->db->insert('pms_medias',$data);
 
             $team = $this->session->userdata('teamdata');
             $this->session->set_userdata('video_added','Video added successfully');
@@ -108,7 +108,7 @@ class Medias_model extends CI_Model
     {
         if ($data!=NULL && $condition!=NULL)
         {
-            $this->db->update('medias',$data,$condition);
+            $this->db->update('pms_medias',$data,$condition);
 
             $team = $this->session->userdata('teamdata');
             $this->session->set_userdata('video_edited','Video edited successfully');
@@ -145,7 +145,7 @@ class Medias_model extends CI_Model
         {
             $data = array('state'=>$state+$inc);
             $this->db->where('id',$media_id);
-            $this->db->update('medias',$data);
+            $this->db->update('pms_medias',$data);
         }
     }
 
@@ -186,7 +186,7 @@ class Medias_model extends CI_Model
                             'notes' => $media->notes,
                          );
 
-                $this->db->insert('medias',$data);
+                $this->db->insert('pms_medias',$data);
             }
         endforeach;
     }

@@ -1,16 +1,16 @@
 <?php
 $id = $this->uri->segment(3);
 
-if ($id==NULL) redirect('users');
+if ($id==NULL) redirect('');
 
 $query = $this->users_model->get_users($id);
+
+if ($query==NULL) redirect('');
 
 $user_role = $this->session->userdata('user_role');
 $user_id = $this->session->userdata('user_id');
 
 $same_user = $user_id == $query->id ? TRUE : FALSE;
-
-//$team = $this->session->userdata('teamdata');
 
 $roles  = unserialize(USER_ROLES);
 $states = unserialize(USER_STATES);
@@ -45,7 +45,6 @@ $states = unserialize(USER_STATES);
             <?php
                 if ($same_user)
                 {
-//                    echo anchor('languages/'.$team->shortname.'/users/edit_profile/'.$query->id, 'Edit profile', 'class="button"');
                     echo anchor('/users/edit_profile/'.$query->id, 'Edit profile', 'class="button"');
                 }
             ?>
