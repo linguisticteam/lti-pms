@@ -18,18 +18,18 @@ class Login_model extends CI_Model
         $this->db->where('password', md5($password));
 
         // Run the query
-        $query = $this->db->get('pms_users');
+        $query = $this->db->get('pms_members');
         // Let's check if there are any results
         if($query->num_rows == 1)
         {
             // If there is a user, then create session data
             $row = $query->row();
             $data = array(
-                'user_id' => $row->id,
-                'user_name' => $row->name,
-                'user_email' => $row->email,
-                'user_language' => $row->language_id,
-                'user_role' => $row->role,
+                'member_id' => $row->id,
+                'member_name' => $row->name,
+                'member_email' => $row->email,
+                'member_language' => $row->language_id,
+                'member_role' => $row->role,
                 'validated' => true
                 );
             $this->session->set_userdata($data);

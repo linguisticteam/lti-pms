@@ -32,12 +32,10 @@ class Medias_model extends CI_Model
         }
     }
     
-//    public function 
-
     public function get_videos_transcribing($team_id)
     {
         $where = 'project_language_id ='.$team_id.' AND type ='.MEDIA_TYPE_VIDEO.' AND state ='.STATE_OPEN_FOR_TRANSCRIPTION.' OR state='.STATE_OPEN_FOR_FIRST_PROOFREADING.' OR state='.STATE_TIMESTAMP_SHIFTING.
-                 ' OR state='.STATE_FINAL_PROOFREADING.' OR state='.STATE_WAINTING_FINAL_REVIEW;
+                 ' OR state='.STATE_FINAL_PROOFREADING.' OR state='.STATE_WAINTING_FINAL_REVIEW.' OR state='.STATE_FINAL_REVIEW_COMPLETED;
         $this->db->where($where);
 
         return $this->get_medias();
@@ -90,6 +88,15 @@ class Medias_model extends CI_Model
 
         return $this->get_medias();
     }
+    
+    public function count_videos_stage($team_id,$stage)
+    {
+        $where = 'project_language_id ='.$team_id.' AND type ='.MEDIA_TYPE_VIDEO.' AND state ='.$stage;
+        $this->db->where($where);
+        $this->db->from('pms_medias');        
+
+        return $this->db->count_all_results();
+    }
 
     public function insert_video($data=NULL)
     {
@@ -117,25 +124,48 @@ class Medias_model extends CI_Model
         }
     }
 
-    public function register_function($media_id, $function, $user_id=NULL)
+    public function register_function($media_id, $function, $member_id=NULL)
     {
         //get media
         $media = $this->get_medias($media_id);
 
         //get team
-        $user_language = $this->session->userdata('user_language');
-        $user_role = $this->session->userdata('user_role');
+        $member_language = $this->session->userdata('member_language');
+        $member_role = $this->session->userdata('member_role');
 
-        //get user
-        if ($user_id==NULL)
+        //get member
+        if ($member_id==NULL)
         {
-            $user_id = $this->session->userdata('user_id');
+            $member_id = $this->session->userdata('member_id');
         }
 
-        //check if user belongs to this team
-        if ($user_language==$media->project_language_id || $user_role >= USER_ROLE_COORDINATION)
+        //check if member belongs to this team
+        if ($member_language==$media->project_language_id || $member_role >= MEMBER_ROLE_COORDINATION)
         {
-            $this->workgroups_model->register_workgroup($media_id, $user_id, $function);
+            $this->workgroups_model->register_workgroup($media_id, $member_id, $function);
+        }
+    }
+    
+    public function unregister_function($media_id, $function, $member_id)
+    {
+        //get media
+        $media = $this->get_medias($media_id);
+
+        //get team
+        $member_language = $this->session->userdata('member_language');
+        $member_role = $this->session->userdata('member_role');
+
+        //check if member belongs to this team
+        if ($member_language==$media->project_language_id || $member_role >= MEMBER_ROLE_COORDINATION)
+        {
+            if (is_numeric($member_id)) // deleting users by id
+            {
+                $this->db->delete('pms_workgroups', array('media_id' => $media_id, 'function' => $function, 'member_id' => $member_id )); 
+            }
+            else // deleting users by name
+            {
+                $this->db->delete('pms_workgroups', array('media_id' => $media_id, 'function' => $function, 'name' => $member_id )); 
+            }            
         }
     }
 

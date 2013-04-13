@@ -1,7 +1,7 @@
 <?php
 
 $team = $this->session->userdata('teamdata');
-$user_role = $this->session->userdata('user_role');
+$member_role = $this->session->userdata('member_role');
 
 $this->table->set_heading('#','Title','Status','Cat','Priority','Location','Duration','Start date',
                           'Transcribers','First Proofreading.','Timestamp','Post-Proofreading','Final review','Forum','Notes',"");
@@ -22,11 +22,11 @@ if (!empty($videos_inprogress))
     $i = 1;
     foreach ($videos as $item):
 
-        $transcribers = $this->users_model->get_users_by_function($item->id,FUNCTION_TRANSCRIBE);
-        $first_proofs = $this->users_model->get_users_by_function($item->id,FUNCTION_FIRST_PROOFREAD);
-        $time_stamper = $this->users_model->get_users_by_function($item->id,FUNCTION_TIMESTAMP);
-        $final_proofs = $this->users_model->get_users_by_function($item->id,FUNCTION_FINAL_PROOFREAD);
-        $final_review = $this->users_model->get_users_by_function($item->id,FUNCTION_FINAL_REVIEW);
+        $transcribers = $this->members_model->get_members_name_by_function($item->id,FUNCTION_TRANSCRIBE);
+        $first_proofs = $this->members_model->get_members_name_by_function($item->id,FUNCTION_FIRST_PROOFREAD);
+        $time_stamper = $this->members_model->get_members_name_by_function($item->id,FUNCTION_TIMESTAMP);
+        $final_proofs = $this->members_model->get_members_name_by_function($item->id,FUNCTION_FINAL_PROOFREAD);
+        $final_review = $this->members_model->get_members_name_by_function($item->id,FUNCTION_FINAL_REVIEW);
 
         $w_l = (!empty($item->working_location)) ? '<a href="'.$item->working_location.'" target="_blank">go</a> -
                                                     <a href="' . $item->working_location . '/transcriptInformation/" target="_blank">info</a>' : '';
@@ -46,23 +46,23 @@ if (!empty($videos_inprogress))
                               '<input name="tipo'.$i.'" type="radio" class="star" value="5" disabled="disabled" '.($item->priority==5?'checked="checked"':'').'/>',
                               $w_l,
                               $item->duration, $s_d,
-                              ($user_role >= USER_ROLE_TRANSCRIBER)?
+                              ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
                               (count($transcribers)>1?implode(", ", $transcribers):$transcribers[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/open_for_translation','I did it!')):
                               (count($transcribers)>1?implode(", ", $transcribers):$transcribers[0]),
-                              ($user_role >= USER_ROLE_TRANSCRIBER)?
+                              ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
                               (count($first_proofs)>1?implode(", ", $first_proofs):$first_proofs[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FIRST_PROOFREAD.'/open_for_translation','I did it!')):
                               (count($first_proofs)>1?implode(", ", $first_proofs):$first_proofs[0]),
-                              ($user_role >= USER_ROLE_TRANSCRIBER)?
+                              ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
                               (count($time_stamper)>1?implode(", ", $time_stamper):$time_stamper[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TIMESTAMP.'/open_for_translation','I did it!')):
                               (count($time_stamper)>1?implode(", ", $time_stamper):$time_stamper[0]),
-                              ($user_role >= USER_ROLE_TRANSCRIBER)?
+                              ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
                               (count($final_proofs)>1?implode(", ", $final_proofs):$final_proofs[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_PROOFREAD.'/open_for_translation','I did it!')):
                               (count($final_proofs)>1?implode(", ", $final_proofs):$final_proofs[0]),
-                              ($user_role >= USER_ROLE_TRANSCRIBER)?
+                              ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
                               (count($final_review)>1?implode(", ", $final_review):$final_review[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_REVIEW.'/open_for_translation','I did it!')):
                               (count($final_review)>1?implode(", ", $final_review):$final_review[0]),
                               $f, $n,
-                              ($user_role >= USER_ROLE_COORDINATION)?
+                              ($member_role >= MEMBER_ROLE_COORDINATION)?
                               (anchor('languages/'.$team->shortname.'/videos/edit/'.$item->id,'[Edit]')):
                               (""));
         $i++;

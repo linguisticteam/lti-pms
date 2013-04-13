@@ -97,7 +97,7 @@ define('MEDIA_TYPE_AUDIO', 2);
 define('MEDIA_SUBTYPE_UNKNOWN', 0);
 
 
-/** USERS **/
+/** MEMBERS **/
 
 define('FUNCTION_TRANSCRIBE', 0);
 define('FUNCTION_FIRST_PROOFREAD', 1);
@@ -108,23 +108,23 @@ define('FUNCTION_TRANSLATE', 5);
 define('FUNCTION_PROOFREAD', 6);
 define('FUNCTION_POSTED', 7);
 
-define('USER_STATE_INACTIVE', -1);
-define('USER_STATE_WAINTING_CONFIRMATION', 0);
-define('USER_STATE_ACTIVE', 1);
+define('MEMBER_STATE_INACTIVE', -1);
+define('MEMBER_STATE_WAINTING_CONFIRMATION', 0);
+define('MEMBER_STATE_ACTIVE', 1);
 
-define('USER_STATES', serialize (array ( -1 => "Inactive",
-                                          0 => "Waiting Confirmation",
-                                          1 => "Active")));
+define('MEMBER_STATES', serialize (array ( -1 => "Inactive",
+                                            0 => "Waiting Confirmation",
+                                            1 => "Active")));
 
-define('USER_ROLE_TRANSLATOR', 1);
-define('USER_ROLE_TRANSCRIBER', 2);
-define('USER_ROLE_COORDINATION', 3);
-define('USER_ROLE_ADMINISTRATOR', 4);
+define('MEMBER_ROLE_TRANSLATOR', 1);
+define('MEMBER_ROLE_TRANSCRIBER', 2);
+define('MEMBER_ROLE_COORDINATION', 3);
+define('MEMBER_ROLE_ADMINISTRATOR', 4);
 
-define('USER_ROLES', serialize (array ( 1 => "Translator",
-                                        2 => "Transcriber",
-                                        3 => "Coordination",
-                                        4 => "Administrator")));
+define('MEMBER_ROLES', serialize (array ( 1 => "Translator",
+                                          2 => "Transcriber",
+                                          3 => "Coordination",
+                                          4 => "Administrator")));
 
 
 

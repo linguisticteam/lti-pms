@@ -14,13 +14,9 @@ else if($type=='team')
     $this->load->view('templates/team-footer');
 }
 
-else if($type=='user')
+else if($type=='member')
 {
-    $this->load->view('templates/user-header');
+    $this->load->view('templates/member-header');
     $this->load->view($view);
-    $this->load->view('templates/user-footer');
+    $this->load->view('templates/member-footer');
 }
-
-//$this->load->view('templates/header');
-//if($view!='') $this->load->view($view);
-//$this->load->view('templates/footer');

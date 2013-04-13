@@ -50,9 +50,12 @@ $route['404_override'] = '';
 $route['languages/(:any)/videos/(:any)/(:any)/(:any)'] = "videos/$2/$3/$4";
 $route['languages/(:any)/videos/(:any)/(:any)'] = "videos/$2/$3";
 $route['languages/(:any)/videos/(:any)'] = "videos/$2";
-$route['languages/(:any)/users/(:any)/(:any)'] = "users/$2/$3";
-$route['languages/(:any)/users/(:any)'] = "users/$2";
-$route['languages/(:any)/users'] = "users";
+$route['languages/(:any)/members/(:any)/(:any)'] = "members/$2/$3";
+$route['languages/(:any)/members/(:any)'] = "members/$2";
+$route['languages/(:any)/members'] = "members";
+//$route['languages/(:any)/users/(:any)/(:any)'] = "users/$2/$3";
+//$route['languages/(:any)/users/(:any)'] = "users/$2";
+//$route['languages/(:any)/users'] = "users";
 $route['languages/(:any)/configuration'] = "languages/configuration";
 $route['languages/(:any)'] = "languages";
 

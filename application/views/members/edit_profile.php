@@ -1,14 +1,14 @@
 <?php
 $id = $this->uri->segment(3);
 
-if ($id==NULL) redirect('users');
+if ($id==NULL) redirect('members');
 
-$query = $this->users_model->get_users($id);
+$query = $this->members_model->get_members($id);
 
-$user_role = $this->session->userdata('user_role');
+$member_role = $this->session->userdata('member_role');
 
-$roles  = unserialize(USER_ROLES);
-$states = unserialize(USER_STATES);
+$roles  = unserialize(MEMBER_ROLES);
+$states = unserialize(MEMBER_STATES);
 
 ?>
 
@@ -18,7 +18,7 @@ $states = unserialize(USER_STATES);
             <legend>Edit profile</legend>
 
             <?php
-                echo form_open('users/edit_profile/'.$id,'class="custom"');
+                echo form_open('members/edit_profile/'.$id,'class="custom"');
             ?>
 
             <div class="row">
@@ -26,10 +26,10 @@ $states = unserialize(USER_STATES);
                     <div class="row collapse">
                         <?php
                             echo validation_errors('<div class="alert-box alert">','<a href="" class="close">&times;</a></div>');
-                            if ($this->session->userdata('user_profile_edited'))
+                            if ($this->session->userdata('member_profile_edited'))
                             {
-                                echo '<div class="alert-box success">'. $this->session->userdata('user_profile_edited') .'<a href="" class="close">&times;</a></div>';
-                                $this->session->unset_userdata('user_profile_edited');
+                                echo '<div class="alert-box success">'. $this->session->userdata('member_profile_edited') .'<a href="" class="close">&times;</a></div>';
+                                $this->session->unset_userdata('member_profile_edited');
                             }
                         ?>
                     </div>
@@ -131,7 +131,7 @@ $states = unserialize(USER_STATES);
                 <div class="large-6 columns">
                     <?php
                         echo form_hidden('id',$query->id);                  
-                        echo form_submit('submit','Edit user','class="button"'); 
+                        echo form_submit('submit','Edit member','class="button"'); 
                     ?>
                 </div>
             </div>

@@ -1,12 +1,12 @@
 <div class="row">
     <div class="large-12 columns">
         <fieldset>
-            <legend>Add User</legend>
+            <legend>Add Member</legend>
 
             <?php
                 $team = $this->session->userdata('teamdata');
 
-                echo form_open('languages/'.$team->shortname.'/users/add');
+                echo form_open('languages/'.$team->shortname.'/members/add');
             ?>
 
             <div class="row">
@@ -14,10 +14,10 @@
                     <div class="row collapse">
                         <?php
                             echo validation_errors('<div class="alert-box alert">','<a href="" class="close">&times;</a></div>');
-                            if ($this->session->userdata('user_added'))
+                            if ($this->session->userdata('member_added'))
                             {
-                                echo '<div class="alert-box success">'. $this->session->userdata('user_added') .'<a href="" class="close">&times;</a></div>';
-                                $this->session->unset_userdata('user_added');
+                                echo '<div class="alert-box success">'. $this->session->userdata('member_added') .'<a href="" class="close">&times;</a></div>';
+                                $this->session->unset_userdata('member_added');
                             }
                         ?>
                     </div>
@@ -91,10 +91,10 @@
                 <div class="large-6 columns">
                     <?php echo form_hidden(array('password'=>'lti')); ?>
                     <?php echo form_hidden(array('language_id'=>$team->id)); ?>
-                    <?php echo form_hidden(array('state'=>USER_STATE_ACTIVE)); ?>
-                    <?php echo form_hidden(array('role'=>USER_ROLE_TRANSLATOR)); ?>
+                    <?php echo form_hidden(array('state'=>MEMBER_STATE_ACTIVE)); ?>
+                    <?php echo form_hidden(array('role'=>MEMBER_ROLE_TRANSLATOR)); ?>
                     <?php echo form_hidden(array('description'=>'')); ?>
-                    <?php echo form_submit('submit','Add user','class="button"'); ?>
+                    <?php echo form_submit('submit','Add member','class="button"'); ?>
                 </div>
             </div>
 

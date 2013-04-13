@@ -1,19 +1,19 @@
 <?php
 $id = $this->uri->segment(5);
 
-if ($id==NULL) redirect('users');
+if ($id==NULL) redirect('members');
 
-$query = $this->users_model->get_users($id);
+$query = $this->members_model->get_members($id);
 
-$user_role = $this->session->userdata('user_role');
+$member_role = $this->session->userdata('member_role');
 
 $team = $this->session->userdata('teamdata');
 
 
-$roles  = unserialize(USER_ROLES);
-$states = unserialize(USER_STATES);
+$roles  = unserialize(MEMBER_ROLES);
+$states = unserialize(MEMBER_STATES);
 
-if ($query->role==USER_ROLE_ADMINISTRATOR && $user_role<=USER_ROLE_COORDINATION)
+if ($query->role==MEMBER_ROLE_ADMINISTRATOR && $member_role<=MEMBER_ROLE_COORDINATION)
 {
     echo '<div class="alert-box error">Sorry baby! You can\'t edit a ADMINISTRATOR!</div>';
 }
@@ -25,10 +25,10 @@ else
 <div class="row">
     <div class="large-12 columns">
         <fieldset>
-            <legend>Edit User</legend>
+            <legend>Edit Members</legend>
 
             <?php
-                echo form_open('languages/'.$team->shortname.'/users/edit/'.$id,'class="custom"');
+                echo form_open('languages/'.$team->shortname.'/members/edit/'.$id,'class="custom"');
             ?>
 
             <div class="row">
@@ -36,10 +36,10 @@ else
                     <div class="row collapse">
                         <?php
                             echo validation_errors('<div class="alert-box alert">','<a href="" class="close">&times;</a></div>');
-                            if ($this->session->userdata('user_edited'))
+                            if ($this->session->userdata('member_edited'))
                             {
-                                echo '<div class="alert-box success">'. $this->session->userdata('user_edited') .'<a href="" class="close">&times;</a></div>';
-                                $this->session->unset_userdata('user_edited');
+                                echo '<div class="alert-box success">'. $this->session->userdata('member_edited') .'<a href="" class="close">&times;</a></div>';
+                                $this->session->unset_userdata('member_edited');
                             }
                         ?>
                     </div>
@@ -127,15 +127,15 @@ else
 
             <div class="row">
                 <div class="large-6 columns">
-                    <?php echo form_label('User role'); ?>
+                    <?php echo form_label('Member role'); ?>
                     <div class="row collapse">
                         <?php
                         echo '<select name="role" class="medium">';
-                            echo '<option value="'.USER_ROLE_TRANSLATOR.'" '.($query->role==USER_ROLE_TRANSLATOR?'selected':'').'>'.$roles[USER_ROLE_TRANSLATOR]. '</option>';
-                            echo '<option value="'.USER_ROLE_TRANSCRIBER.'" '.($query->role==USER_ROLE_TRANSCRIBER?'selected':'').'>'.$roles[USER_ROLE_TRANSCRIBER].'</option>';
-                            echo '<option value="'.USER_ROLE_COORDINATION.'" '.($query->role==USER_ROLE_COORDINATION?'selected':'').'>'.$roles[USER_ROLE_COORDINATION].'</option>';
-                            if ($user_role==USER_ROLE_ADMINISTRATOR)
-                                echo '<option value="'.USER_ROLE_ADMINISTRATOR.'" '.($query->role==USER_ROLE_ADMINISTRATOR?'selected':'').'>'.$roles[USER_ROLE_ADMINISTRATOR].'</option>';
+                            echo '<option value="'.MEMBER_ROLE_TRANSLATOR.'" '.($query->role==MEMBER_ROLE_TRANSLATOR?'selected':'').'>'.$roles[MEMBER_ROLE_TRANSLATOR]. '</option>';
+                            echo '<option value="'.MEMBER_ROLE_TRANSCRIBER.'" '.($query->role==MEMBER_ROLE_TRANSCRIBER?'selected':'').'>'.$roles[MEMBER_ROLE_TRANSCRIBER].'</option>';
+                            echo '<option value="'.MEMBER_ROLE_COORDINATION.'" '.($query->role==MEMBER_ROLE_COORDINATION?'selected':'').'>'.$roles[MEMBER_ROLE_COORDINATION].'</option>';
+                            if ($member_role==MEMBER_ROLE_ADMINISTRATOR)
+                                echo '<option value="'.MEMBER_ROLE_ADMINISTRATOR.'" '.($query->role==MEMBER_ROLE_ADMINISTRATOR?'selected':'').'>'.$roles[MEMBER_ROLE_ADMINISTRATOR].'</option>';
                         echo '</select>'
                         ?>
                     </div>
@@ -146,13 +146,13 @@ else
 
             <div class="row">
                 <div class="large-6 columns">
-                    <?php echo form_label('User state'); ?>
+                    <?php echo form_label('Member state'); ?>
                     <div class="row collapse">
                         <?php
                         echo '<select name="state" class="medium">';
-                            echo '<option value="'.USER_STATE_INACTIVE.'" '.($query->state==USER_STATE_INACTIVE?'selected':'').'>'.$states[USER_STATE_INACTIVE]. '</option>';
-                            echo '<option value="'.USER_STATE_ACTIVE.'" '.($query->state==USER_STATE_ACTIVE?'selected':'').'>'.$states[USER_STATE_ACTIVE]. '</option>';
-                            echo '<option value="'.USER_STATE_WAINTING_CONFIRMATION.'" '.($query->state==USER_STATE_WAINTING_CONFIRMATION?'selected':'').'>'.$states[USER_STATE_WAINTING_CONFIRMATION]. '</option>';
+                            echo '<option value="'.MEMBER_STATE_INACTIVE.'" '.($query->state==MEMBER_STATE_INACTIVE?'selected':'').'>'.$states[MEMBER_STATE_INACTIVE]. '</option>';
+                            echo '<option value="'.MEMBER_STATE_ACTIVE.'" '.($query->state==MEMBER_STATE_ACTIVE?'selected':'').'>'.$states[MEMBER_STATE_ACTIVE]. '</option>';
+                            echo '<option value="'.MEMBER_STATE_WAINTING_CONFIRMATION.'" '.($query->state==MEMBER_STATE_WAINTING_CONFIRMATION?'selected':'').'>'.$states[MEMBER_STATE_WAINTING_CONFIRMATION]. '</option>';
                         echo '</select>'
                         ?>
                     </div>
@@ -165,8 +165,9 @@ else
                 <div class="large-6 columns">
                     <?php
                         echo form_hidden('id',$query->id);
+                        echo form_hidden('original_email',$query->email);
                         echo form_hidden(array('language_id'=>$team->id));
-                        echo form_submit('submit','Edit user','class="button"'); 
+                        echo form_submit('submit','Edit member','class="button"'); 
                     ?>
                 </div>
             </div>

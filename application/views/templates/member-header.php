@@ -1,6 +1,6 @@
 <?php    
-    $user_id = $this->session->userdata('user_id');
-    $user_name = $this->session->userdata('user_name');
+    $member_id = $this->session->userdata('member_id');
+    $member_name = $this->session->userdata('member_name');
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
@@ -47,12 +47,12 @@
                 <ul class="right">
                     <li class="divider hide-for-small"></li>
                     <?php
-                    if ($user_name!=NULL)
+                    if ($member_name!=NULL)
                     {
                     ?>
-                    <li class="has-dropdown"><?php echo anchor('users/view/'.$user_id, '('.$user_name.')' ); ?>
+                    <li class="has-dropdown"><?php echo anchor('members/view/'.$member_id, '('.$member_name.')' ); ?>
                         <ul class="dropdown">
-                            <li><?php echo anchor('users/edit_profile/'.$user_id, 'Edit profile' ); ?></li>
+                            <li><?php echo anchor('members/edit_profile/'.$member_id, 'Edit profile' ); ?></li>
                             <li><?php echo anchor('home/do_logout', 'Sign Out'); ?></li>
                         </ul>
                     </li>
@@ -61,7 +61,7 @@
                     else
                     {
                     ?>
-                    <li><?php echo anchor('', '('.$user_name.') Sign In'); ?></li>
+                    <li><?php echo anchor('', '('.$member_name.') Sign In'); ?></li>
                     <?php
                     }
                     ?>

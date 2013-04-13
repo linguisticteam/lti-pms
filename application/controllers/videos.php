@@ -52,14 +52,38 @@ class Videos extends CI_Controller {
     }
     
     public function register_member_function()
+    { 
+        $media_id = $this->uri->segment(5);
+        $function = $this->uri->segment(6);
+        $member_id = $this->uri->segment(7);
+
+        $shortname = $this->uri->segment(2);
+       
+        // I don't know why the method has been called twice.
+        // The second time it has a value of 'js'
+        if ($member_id!='js')        
+            $this->medias_model->register_function($media_id, $function, $member_id);
+
+        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_shortname($shortname));
+        
+        $data = array(
+            'title' => 'Edit video',
+            'type' => 'team',
+            'view' => 'videos/edit'
+        );
+
+        $this->load->view('controlpanel',$data);
+    }
+    
+    public function unregister_member_function()
     {
         $media_id = $this->uri->segment(5);
         $function = $this->uri->segment(6);
-        $user_id = $this->uri->segment(7);
+        $member_id = $this->uri->segment(7);
 
         $shortname = $this->uri->segment(2);
         
-        $this->medias_model->register_function($media_id, $function, $user_id);
+        $this->medias_model->unregister_function($media_id, $function, $member_id);
 
         $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_shortname($shortname));
         

@@ -1,7 +1,7 @@
 <?php
 
 $team = $this->session->userdata('teamdata');
-$user_role = $this->session->userdata('user_role');
+$member_role = $this->session->userdata('member_role');
 
 $this->table->set_heading('#','Title','Status','Cat','Priority','Location','Duration','Start date','Publish date',
                           'Translators','Proofreaders','Forum','Notes',"");
@@ -21,8 +21,8 @@ if (!empty($videos_inprogress))
     $i = 1;
     foreach ($videos as $item):
 
-        $translators  = $this->users_model->get_users_by_function($item->id,FUNCTION_TRANSLATE);
-        $proofreaders = $this->users_model->get_users_by_function($item->id,FUNCTION_PROOFREAD);
+        $translators  = $this->members_model->get_members_name_by_function($item->id,FUNCTION_TRANSLATE);
+        $proofreaders = $this->members_model->get_members_name_by_function($item->id,FUNCTION_PROOFREAD);
 
         $w_l = (!empty($item->working_location)) ? '<a href="'.$item->working_location.'" target="_blank">go</a> -
                                                     <a href="' . $item->working_location . '/transcriptInformation/" target="_blank">info</a>' : '';
@@ -43,15 +43,15 @@ if (!empty($videos_inprogress))
                               '<input name="tipo'.$i.'" type="radio" class="star" value="5" disabled="disabled" '.($item->priority==5?'checked="checked"':'').'/>',
                               $w_l,
                               $item->duration, $s_d, $s_f,
-                              ($user_role >= USER_ROLE_TRANSLATOR)?
+                              ($member_role >= MEMBER_ROLE_TRANSLATOR)?
                               (count($translators)>1?implode(", ", $translators):$translators[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/in_progress','I did it!')):
                               (count($translators)>1?implode(", ", $translators):$translators[0]),
-                              ($user_role >= USER_ROLE_TRANSLATOR)?
+                              ($member_role >= MEMBER_ROLE_TRANSLATOR)?
                               (count($proofreaders)>1?implode(", ", $proofreaders):$proofreaders[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/in_progress','I did it!')):
                               (count($proofreaders)>1?implode(", ", $proofreaders):$proofreaders[0]),
                               $f, $n,
             //                "<span title='$item->comments'>read</span>",
-                              ($user_role >= USER_ROLE_COORDINATION)?
+                              ($member_role >= MEMBER_ROLE_COORDINATION)?
                               (anchor('languages/'.$team->shortname.'/videos/edit/'.$item->id,'[Edit]')):
                               (""));
         $i++;

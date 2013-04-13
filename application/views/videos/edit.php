@@ -7,7 +7,7 @@ $query = $this->medias_model->get_medias($id);
 
 $team = $this->session->userdata('teamdata');
 
-$team_members = $this->users_model->get_users_by_language($team->id);
+$team_members = $this->members_model->get_members_by_language($team->id);
 
 $is_original = ($query->parent_id==0)?TRUE:FALSE;
 
@@ -55,7 +55,7 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                             <?php
                                 echo form_label('Originator');
                                 echo form_input(array('id'=>'originator','name'=>'originator'),set_value('originator',$query->originator),$is_original?'':' readonly="readonly"');
-                                
+
                                 if (!$is_original)
                                     echo form_hidden('originator',$query->originator);
                             ?>
@@ -74,7 +74,7 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                                             echo '<option value="'.$i.'" '. ($i==$query->category? 'selected' : '').'>'.$item.'</option>'."\n";
                                             $i++;
                                         endforeach;
-                                        
+
                                         if (!$is_original)
                                             echo form_hidden('category',$query->category);
                                     ?>
@@ -87,7 +87,7 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                             <?php
                                 echo form_label('Producer');
                                 echo form_input(array('id'=>'producer','name'=>'producer'),set_value('producer',$query->producer),$is_original?'':' readonly="readonly"');
-                                
+
                                 if (!$is_original)
                                     echo form_hidden('producer',$query->producer);
                             ?>
@@ -114,7 +114,7 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                         <?php
                             echo form_label('Description');
                             echo form_textarea(array('id'=>'description','name'=>'description','style'=>'height:10%'),set_value('description',$query->description),($is_original?'':' readonly="readonly"'));
-                            
+
                             if (!$is_original)
                                 echo form_hidden('description',$query->description);
                         ?>
@@ -127,9 +127,9 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                 <div class="large-4 columns">
                     <?php echo form_label('Working location'); ?>
                     <div class="row collapse">
-                        <?php 
-                        echo form_input(array('id'=>'working_location','name'=>'working_location'),set_value('working_location',$query->working_location),($is_original?'':' readonly="readonly"')); 
-                        
+                        <?php
+                        echo form_input(array('id'=>'working_location','name'=>'working_location'),set_value('working_location',$query->working_location),($is_original?'':' readonly="readonly"'));
+
                         if (!$is_original)
                             echo form_hidden('working_location',$query->working_location);
                         ?>
@@ -138,9 +138,9 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                 <div class="large-4 columns">
                     <?php echo form_label('Original location'); ?>
                     <div class="row collapse">
-                        <?php 
-                        echo form_input(array('id'=>'original_location','name'=>'original_location'),set_value('original_location',$query->original_location),($is_original?'':' readonly="readonly"')); 
-                        
+                        <?php
+                        echo form_input(array('id'=>'original_location','name'=>'original_location'),set_value('original_location',$query->original_location),($is_original?'':' readonly="readonly"'));
+
                         if (!$is_original)
                             echo form_hidden('original_location',$query->original_location);
                         ?>
@@ -149,8 +149,8 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                 <div class="large-4 columns">
                     <?php echo form_label('Publish location'); ?>
                     <div class="row collapse">
-                        <?php 
-                        echo form_input(array('id'=>'publish_location','name'=>'publish_location'),set_value('publish_location',$query->publish_location));                         
+                        <?php
+                        echo form_input(array('id'=>'publish_location','name'=>'publish_location'),set_value('publish_location',$query->publish_location));
                         ?>
                     </div>
                 </div>
@@ -160,9 +160,9 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                 <div class="large-4 columns">
                     <?php echo form_label('Repository storage location'); ?>
                     <div class="row collapse">
-                        <?php 
-                        echo form_input(array('id'=>'repo_storage_location','name'=>'repo_storage_location'),set_value('repo_storage_location',$query->repo_storage_location),($is_original?'':' readonly="readonly"')); 
-                        
+                        <?php
+                        echo form_input(array('id'=>'repo_storage_location','name'=>'repo_storage_location'),set_value('repo_storage_location',$query->repo_storage_location),($is_original?'':' readonly="readonly"'));
+
                         if (!$is_original)
                             echo form_hidden('repo_storage_location',$query->repo_storage_location);
                         ?>
@@ -171,9 +171,9 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                 <div class="large-4 columns">
                     <?php echo form_label('Repository distribution location'); ?>
                     <div class="row collapse">
-                        <?php 
-                        echo form_input(array('id'=>'repo_distribution_location','name'=>'repo_distribution_location'),set_value('repo_distribution_location',$query->repo_distribution_location),($is_original?'':' readonly="readonly"')); 
-                        
+                        <?php
+                        echo form_input(array('id'=>'repo_distribution_location','name'=>'repo_distribution_location'),set_value('repo_distribution_location',$query->repo_distribution_location),($is_original?'':' readonly="readonly"'));
+
                         if (!$is_original)
                             echo form_hidden('repo_distribution_location',$query->repo_distribution_location);
                         ?>
@@ -197,7 +197,7 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                                 $('#date_added').datepicker('setDate', realDate);
                             </script>
                         <?php
-                        
+
                             if (!$is_original)
                                 echo form_hidden('date_added',$query->date_added);
                             }
@@ -301,34 +301,45 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
 
                         </div>
                         <div class="small-3 columns">
-                            <button type="button" onclick="register_transcriber()" class="small button secondary">Add</button>
+                            <button type="button"  id="add_transcriber" name="add_transcriber"  onclick="register_transcriber()" class="small button secondary">Add</button>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="small-9 columns">
-                            <?php 
-                            echo form_input(array('id'=>'transcriber_name','name'=>'transcriber_name'),''); ?>
+                            <?php
+                            echo form_input(array('id'=>'transcriber_name','name'=>'transcriber_name'),'');
                             ?>
                         </div>
                         <div class="small-3 columns">
-                            <button type="button" onclick="register_transcriber_name()" class="small button secondary">Add</button>
+                            <button type="button" id="add_transcriber_name" name="add_transcriber_name" onclick="register_transcriber_name()" class="small button secondary">Add</button>
                         </div>
                     </div>
-                    
+
                     <div class="row collapse">
                         <div class="small-12 columns">
                             <p>
                             <?php
-                            $transcribers = $this->users_model->get_users_by_function($query->id,FUNCTION_TRANSCRIBE);
+                            $transcribers = $this->members_model->get_members_by_function($query->id,FUNCTION_TRANSCRIBE);
 
                             if (!empty($transcribers))
                             {
-                                echo '<ul class="circle" style="font-size:14px">';
+                                echo '<div style="font-size:11px">';
                                 foreach ($transcribers as $item):
-                                    echo '<li>'.$item.'</li>';
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_transcriber_name('.$item->id.')"></i> '.$item->name.'<br /><br />';
                                 endforeach;
-                                echo '</ul>';
+                                echo '</div>';
+                            }
+
+                            $out_transcribers = $this->members_model->get_out_members_by_function($query->id,FUNCTION_TRANSCRIBE);
+
+                            if (!empty($out_transcribers))
+                            {
+                                echo '<div style="font-size:11px">';
+                                foreach ($out_transcribers as $item):
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_transcriber_name(\''.$item.'\')"></i> '.$item.'<br /><br />';
+                                endforeach;
+                                echo '</div>';
                             }
                             ?>
                             </p>
@@ -353,19 +364,42 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                             <button type="button" onclick="register_first_proof()" class="small button secondary">Add</button>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="small-9 columns">
+                            <?php
+                            echo form_input(array('id'=>'first_proof_name','name'=>'first_proof_name'),'');
+                            ?>
+                        </div>
+                        <div class="small-3 columns">
+                            <button type="button" id="add_first_proof_name" name="add_first_proof_name" onclick="register_first_proof_name()" class="small button secondary">Add</button>
+                        </div>
+                    </div>
+
                     <div class="row collapse">
                         <div class="small-12 columns">
                             <p>
                             <?php
-                            $first_proofs = $this->users_model->get_users_by_function($query->id,FUNCTION_FIRST_PROOFREAD);
+                            $first_proofs = $this->members_model->get_members_by_function($query->id,FUNCTION_FIRST_PROOFREAD);
 
                             if (!empty($first_proofs))
                             {
-                                echo '<ul class="circle" style="font-size:14px">';
+                                echo '<div style="font-size:11px">';
                                 foreach ($first_proofs as $item):
-                                    echo '<li>'.$item.'</li>';
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_first_proof_name('.$item->id.')"></i> '.$item->name.'<br /><br />';
                                 endforeach;
-                                echo '</ul>';
+                                echo '</div>';
+                            }
+
+                            $out_first_proofs = $this->members_model->get_out_members_by_function($query->id,FUNCTION_FIRST_PROOFREAD);
+
+                            if (!empty($out_first_proofs))
+                            {
+                                echo '<div style="font-size:11px">';
+                                foreach ($out_first_proofs as $item):
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_first_proof_name(\''.$item.'\')"></i> '.$item.'<br /><br />';
+                                endforeach;
+                                echo '</div>';
                             }
                             ?>
                             </p>
@@ -390,19 +424,42 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                             <button type="button" onclick="register_timestamp()" class="small button secondary">Add</button>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="small-9 columns">
+                            <?php
+                            echo form_input(array('id'=>'timestamp_name','name'=>'timestamp_name'),'');
+                            ?>
+                        </div>
+                        <div class="small-3 columns">
+                            <button type="button" id="add_timestamp_name" name="add_timestamp_name" onclick="register_timestamp_name()" class="small button secondary">Add</button>
+                        </div>
+                    </div>
+
                     <div class="row collapse">
                         <div class="small-12 columns">
                             <p>
                             <?php
-                            $timestamp = $this->users_model->get_users_by_function($query->id,FUNCTION_TIMESTAMP);
+                            $timestamp = $this->members_model->get_members_by_function($query->id,FUNCTION_TIMESTAMP);
 
                             if (!empty($timestamp))
                             {
-                                echo '<ul class="circle" style="font-size:14px">';
+                                echo '<div style="font-size:11px">';
                                 foreach ($timestamp as $item):
-                                    echo '<li>'.$item.'</li>';
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_timestamp_name('.$item->id.')"></i> '.$item->name.'<br /><br />';
                                 endforeach;
-                                echo '</ul>';
+                                echo '</div>';
+                            }
+
+                            $out_timestamp = $this->members_model->get_out_members_by_function($query->id,FUNCTION_TIMESTAMP);
+
+                            if (!empty($out_timestamp))
+                            {
+                                echo '<div style="font-size:11px">';
+                                foreach ($out_timestamp as $item):
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_timestamp_name(\''.$item.'\')"></i> '.$item.'<br /><br />';
+                                endforeach;
+                                echo '</div>';
                             }
                             ?>
                             </p>
@@ -427,24 +484,48 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                             <button type="button" onclick="register_final_proof()" class="small button secondary">Add</button>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="small-9 columns">
+                            <?php
+                            echo form_input(array('id'=>'final_proof_name','name'=>'final_proof_name'),'');
+                            ?>
+                        </div>
+                        <div class="small-3 columns">
+                            <button type="button" id="add_final_proof_name" name="add_final_proof_name" onclick="register_final_proof_name()" class="small button secondary">Add</button>
+                        </div>
+                    </div>
+
                     <div class="row collapse">
                         <div class="small-12 columns">
                             <p>
                             <?php
-                            $final_proofs = $this->users_model->get_users_by_function($query->id,FUNCTION_FINAL_PROOFREAD);
+                            $final_proofs = $this->members_model->get_members_by_function($query->id,FUNCTION_FINAL_PROOFREAD);
 
                             if (!empty($final_proofs))
                             {
-                                echo '<ul class="circle" style="font-size:14px">';
+                                echo '<div style="font-size:11px">';
                                 foreach ($final_proofs as $item):
-                                    echo '<li>'.$item.'</li>';
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_final_proof_name('.$item->id.')"></i> '.$item->name.'<br /><br />';
                                 endforeach;
-                                echo '</ul>';
+                                echo '</div>';
+                            }
+
+                            $out_final_proof = $this->members_model->get_out_members_by_function($query->id,FUNCTION_FINAL_PROOFREAD);
+
+                            if (!empty($out_final_proof))
+                            {
+                                echo '<div style="font-size:11px">';
+                                foreach ($out_final_proof as $item):
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_final_proof_name(\''.$item.'\')"></i> '.$item.'<br /><br />';
+                                endforeach;
+                                echo '</div>';
                             }
                             ?>
                             </p>
                         </div>
                     </div>
+
                 </div>
                 <div class="large-2 columns">
                     <?php echo form_label('Final Review'); ?>
@@ -464,19 +545,42 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                             <button type="button" onclick="register_final_review()" class="small button secondary">Add</button>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="small-9 columns">
+                            <?php
+                            echo form_input(array('id'=>'final_review_name','name'=>'final_review_name'),'');
+                            ?>
+                        </div>
+                        <div class="small-3 columns">
+                            <button type="button" id="add_final_review_name" name="add_final_review_name" onclick="register_final_review_name()" class="small button secondary">Add</button>
+                        </div>
+                    </div>
+
                     <div class="row collapse">
                         <div class="small-12 columns">
                             <p>
                             <?php
-                            $final_review = $this->users_model->get_users_by_function($query->id,FUNCTION_FINAL_REVIEW);
+                            $final_review = $this->members_model->get_members_by_function($query->id,FUNCTION_FINAL_REVIEW);
 
                             if (!empty($final_review))
                             {
-                                echo '<ul class="circle" style="font-size:14px">';
+                                echo '<div style="font-size:11px">';
                                 foreach ($final_review as $item):
-                                    echo '<li>'.$item.'</li>';
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_final_review_name('.$item->id.')"></i> '.$item->name.'<br /><br />';
                                 endforeach;
-                                echo '</ul>';
+                                echo '</div>';
+                            }
+
+                            $out_final_review = $this->members_model->get_out_members_by_function($query->id,FUNCTION_FINAL_REVIEW);
+
+                            if (!empty($out_final_review))
+                            {
+                                echo '<div style="font-size:11px">';
+                                foreach ($out_final_review as $item):
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_final_review_name(\''.$item.'\')"></i> '.$item.'<br /><br />';
+                                endforeach;
+                                echo '</div>';
                             }
                             ?>
                             </p>
@@ -510,19 +614,42 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                             <button type="button" onclick="register_translator()" class="small button secondary">Add</button>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="small-9 columns">
+                            <?php
+                            echo form_input(array('id'=>'translator_name','name'=>'translator_name'),'');
+                            ?>
+                        </div>
+                        <div class="small-3 columns">
+                            <button type="button" id="add_translator_name" name="add_translator_name" onclick="register_translator_name()" class="small button secondary">Add</button>
+                        </div>
+                    </div>
+
                     <div class="row collapse">
                         <div class="small-12 columns">
                             <p>
                             <?php
-                            $translators = $this->users_model->get_users_by_function($query->id,FUNCTION_TRANSLATE);
+                            $translators = $this->members_model->get_members_by_function($query->id,FUNCTION_TRANSLATE);
 
                             if (!empty($translators))
                             {
-                                echo '<ul class="circle" style="font-size:14px">';
+                                echo '<div style="font-size:11px">';
                                 foreach ($translators as $item):
-                                    echo '<li>'.$item.'</li>';
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_translator_name('.$item->id.')"></i> '.$item->name.'<br /><br />';
                                 endforeach;
-                                echo '</ul>';
+                                echo '</div>';
+                            }
+
+                            $out_translator = $this->members_model->get_out_members_by_function($query->id,FUNCTION_TRANSLATE);
+
+                            if (!empty($out_translator))
+                            {
+                                echo '<div style="font-size:11px">';
+                                foreach ($out_translator as $item):
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_translator_name(\''.$item.'\')"></i> '.$item.'<br /><br />';
+                                endforeach;
+                                echo '</div>';
                             }
                             ?>
                             </p>
@@ -547,19 +674,42 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
                             <button type="button" onclick="register_proofreader()" class="small button secondary">Add</button>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="small-9 columns">
+                            <?php
+                            echo form_input(array('id'=>'proofreader_name','name'=>'proofreader_name'),'');
+                            ?>
+                        </div>
+                        <div class="small-3 columns">
+                            <button type="button" id="add_proofreader_name" name="add_proofreader_name" onclick="register_proofreader_name()" class="small button secondary">Add</button>
+                        </div>
+                    </div>
+
                     <div class="row collapse">
                         <div class="small-12 columns">
                             <p>
                             <?php
-                            $proofreaders = $this->users_model->get_users_by_function($query->id,FUNCTION_PROOFREAD);
+                            $proofreaders = $this->members_model->get_members_by_function($query->id,FUNCTION_PROOFREAD);
 
                             if (!empty($proofreaders))
                             {
-                                echo '<ul class="circle" style="font-size:14px">';
+                                echo '<div style="font-size:11px">';
                                 foreach ($proofreaders as $item):
-                                    echo '<li>'.$item.'</li>';
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_proofreader_name('.$item->id.')"></i> '.$item->name.'<br /><br />';
                                 endforeach;
-                                echo '</ul>';
+                                echo '</div>';
+                            }
+
+                            $out_proofreaders = $this->members_model->get_out_members_by_function($query->id,FUNCTION_PROOFREAD);
+
+                            if (!empty($out_proofreaders))
+                            {
+                                echo '<div style="font-size:11px">';
+                                foreach ($out_proofreaders as $item):
+                                    echo '<i class="foundicon-remove style1" onclick="unregister_proofreader_name(\''.$item.'\')"></i> '.$item.'<br /><br />';
+                                endforeach;
+                                echo '</div>';
                             }
                             ?>
                             </p>
@@ -673,41 +823,117 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
         if (e!=0)
             window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_TRANSCRIBE.'/';?>"+e+"";
     }
+    function register_transcriber_name()
+    {
+        var e = document.getElementById("transcriber_name").value;
+        if (e.length != 0 && e.length < 45)
+            window.location = "<?php  echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_TRANSCRIBE.'/';?>"+e+"";
+    }
+    function unregister_transcriber_name(id)
+    {
+        window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/unregister_member_function/'.$query->id.'/'.FUNCTION_TRANSCRIBE.'/';?>"+id+"";
+    }
+
     function register_first_proof()
     {
         var e = document.getElementById("first_proof").value;
         if (e!=0)
             window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_FIRST_PROOFREAD.'/';?>"+e+"";
     }
+    function register_first_proof_name()
+    {
+        var e = document.getElementById("first_proof_name").value;
+        if (e.length != 0 && e.length < 45)
+            window.location = "<?php  echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_FIRST_PROOFREAD.'/';?>"+e+"";
+    }
+    function unregister_first_proof_name(id)
+    {
+        window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/unregister_member_function/'.$query->id.'/'.FUNCTION_FIRST_PROOFREAD.'/';?>"+id+"";
+    }
+
     function register_timestamp()
     {
         var e = document.getElementById("timestamp").value;
         if (e!=0)
             window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_TIMESTAMP.'/';?>"+e+"";
     }
+    function register_timestamp_name()
+    {
+        var e = document.getElementById("timestamp_name").value;
+        if (e.length != 0 && e.length < 45)
+            window.location = "<?php  echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_TIMESTAMP.'/';?>"+e+"";
+    }
+    function unregister_timestamp_name(id)
+    {
+        window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/unregister_member_function/'.$query->id.'/'.FUNCTION_TIMESTAMP.'/';?>"+id+"";
+    }
+
     function register_final_proof()
     {
         var e = document.getElementById("final_proofs").value;
         if (e!=0)
             window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_FINAL_PROOFREAD.'/';?>"+e+"";
     }
+    function register_final_proof_name()
+    {
+        var e = document.getElementById("final_proof_name").value;
+        if (e.length != 0 && e.length < 45)
+            window.location = "<?php  echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_FINAL_PROOFREAD.'/';?>"+e+"";
+    }
+    function unregister_final_proof_name(id)
+    {
+        window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/unregister_member_function/'.$query->id.'/'.FUNCTION_FINAL_PROOFREAD.'/';?>"+id+"";
+    }
+
     function register_final_review()
     {
         var e = document.getElementById("final_review").value;
         if (e!=0)
             window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_FINAL_REVIEW.'/';?>"+e+"";
     }
+    function register_final_review_name()
+    {
+        var e = document.getElementById("final_review_name").value;
+        if (e.length != 0 && e.length < 45)
+            window.location = "<?php  echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_FINAL_REVIEW.'/';?>"+e+"";
+    }
+    function unregister_final_review_name(id)
+    {
+        window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/unregister_member_function/'.$query->id.'/'.FUNCTION_FINAL_REVIEW.'/';?>"+id+"";
+    }
+
     function register_translator()
     {
         var e = document.getElementById("translators").value;
         if (e!=0)
             window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_TRANSLATE.'/';?>"+e+"";
     }
+    function register_translator_name()
+    {
+        var e = document.getElementById("translator_name").value;
+        if (e.length != 0 && e.length < 45)
+            window.location = "<?php  echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_TRANSLATE.'/';?>"+e+"";
+    }
+    function unregister_translator_name(id)
+    {
+        window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/unregister_member_function/'.$query->id.'/'.FUNCTION_TRANSLATE.'/';?>"+id+"";
+    }
+
     function register_proofreader()
     {
         var e = document.getElementById("proofreaders").value;
         if (e!=0)
             window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_PROOFREAD.'/';?>"+e+"";
+    }
+    function register_proofreader_name()
+    {
+        var e = document.getElementById("proofreader_name").value;
+        if (e.length != 0 && e.length < 45)
+            window.location = "<?php  echo base_url().'languages/'.$team->shortname.'/videos/register_member_function/'.$query->id.'/'.FUNCTION_PROOFREAD.'/';?>"+e+"";
+    }
+    function unregister_proofreader_name(id)
+    {
+        window.location = "<?php echo base_url().'languages/'.$team->shortname.'/videos/unregister_member_function/'.$query->id.'/'.FUNCTION_PROOFREAD.'/';?>"+id+"";
     }
 
     $(function()
@@ -727,3 +953,7 @@ $is_original = ($query->parent_id==0)?TRUE:FALSE;
         document.forms[0]["duration"].value=hours+":"+minutes+":"+seconds;
     }
 </script>
+
+<style type="text/css">
+    .style1 { font-size: 10px; overflow: hidden; color: #2ba6cb; }
+</style>

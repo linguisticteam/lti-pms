@@ -1,9 +1,9 @@
 <?php
     $team = $this->session->userdata('teamdata');
-    $user_id = $this->session->userdata('user_id');
-    $user_name = $this->session->userdata('user_name');
-    $user_role = $this->session->userdata('user_role');
-    $user_language = $this->session->userdata('user_language');
+    $member_id = $this->session->userdata('member_id');
+    $member_name = $this->session->userdata('member_name');
+    $member_role = $this->session->userdata('member_role');
+    $member_language = $this->session->userdata('member_language');
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
@@ -49,7 +49,7 @@
                 <ul class="left">
                     <li class="divider"></li>
                     <?php
-                    if ( ($user_role>=USER_ROLE_COORDINATION && $user_language==$team->id) || ($user_role==USER_ROLE_ADMINISTRATOR) )
+                    if ( ($member_role>=MEMBER_ROLE_COORDINATION && $member_language==$team->id) || ($member_role==MEMBER_ROLE_ADMINISTRATOR) )
                     {
                     ?>
                     <li class="has-dropdown"><?php echo anchor('languages/'.$team->shortname, $team->name); ?>
@@ -97,17 +97,17 @@
                     </li>
                     <li class="divider"></li>
                     <?php
-                    if ($user_role>=USER_ROLE_COORDINATION)
+                    if ($member_role>=MEMBER_ROLE_COORDINATION)
                     {
                     ?>
-                    <li class="has-dropdown"><?php echo anchor('languages/'.$team->shortname.'/users', 'Users'); ?>
+                    <li class="has-dropdown"><?php echo anchor('languages/'.$team->shortname.'/members', 'Members'); ?>
                         
                         <?php
-                        if ( ($user_role>=USER_ROLE_COORDINATION && $user_language==$team->id) || ($user_role==USER_ROLE_ADMINISTRATOR) )
+                        if ( ($member_role>=MEMBER_ROLE_COORDINATION && $member_language==$team->id) || ($member_role==MEMBER_ROLE_ADMINISTRATOR) )
                         {
                         ?>
                         <ul class="dropdown">
-                            <li><?php echo anchor('languages/'.$team->shortname.'/users/add', 'Add user'); ?></li>
+                            <li><?php echo anchor('languages/'.$team->shortname.'/members/add', 'Add member'); ?></li>
                         </ul>
                         <?php
                         }
@@ -123,12 +123,12 @@
                 <ul class="right">
                     <li class="divider hide-for-small"></li>
                     <?php
-                    if ($user_name!=NULL)
+                    if ($member_name!=NULL)
                     {
                     ?>
-                    <li class="has-dropdown"><?php echo anchor('/users/view/'.$user_id, '('.$user_name.')' ); ?>
+                    <li class="has-dropdown"><?php echo anchor('/members/view/'.$member_id, '('.$member_name.')' ); ?>
                         <ul class="dropdown">
-                            <li><?php echo anchor('users/edit_profile/'.$user_id, 'Edit profile' ); ?></li>
+                            <li><?php echo anchor('members/edit_profile/'.$member_id, 'Edit profile' ); ?></li>
                             <li><?php echo anchor('home/do_logout', 'Sign Out'); ?></li>
                         </ul>
                     </li>

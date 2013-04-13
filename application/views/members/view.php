@@ -3,17 +3,17 @@ $id = $this->uri->segment(3);
 
 if ($id==NULL) redirect('');
 
-$query = $this->users_model->get_users($id);
+$query = $this->members_model->get_members($id);
 
 if ($query==NULL) redirect('');
 
-$user_role = $this->session->userdata('user_role');
-$user_id = $this->session->userdata('user_id');
+$member_role = $this->session->userdata('member_role');
+$member_id = $this->session->userdata('member_id');
 
-$same_user = $user_id == $query->id ? TRUE : FALSE;
+$same_member = $member_id == $query->id ? TRUE : FALSE;
 
-$roles  = unserialize(USER_ROLES);
-$states = unserialize(USER_STATES);
+$roles  = unserialize(MEMBER_ROLES);
+$states = unserialize(MEMBER_STATES);
 ?>
 
 <div class="row">
@@ -28,7 +28,7 @@ $states = unserialize(USER_STATES);
                                         
                     echo 'Role: <strong>'.$roles[$query->role].'</strong><br />';
 
-                    if ($same_user || $user_role >= USER_ROLE_COORDINATION)
+                    if ($same_member || $member_role >= MEMBER_ROLE_COORDINATION)
                     {
                         echo 'email: <strong>'.$query->email.'</strong><br />';
                         echo 'dotsub id: <strong>'.$query->dotsub_id.'</strong><br />';
@@ -37,15 +37,15 @@ $states = unserialize(USER_STATES);
                         echo 'Skype id: <strong>'.$query->skype_id.'</strong><br />';
                     }
 
-                    echo 'User state: <strong>'.$states[$query->state].'</strong><br />';
+                    echo 'Member state: <strong>'.$states[$query->state].'</strong><br />';
                     if ($query->description!=NULL && $query->description!=0)
                     echo 'Description: <strong>'.$query->description.'</strong><br />';
                     ?>
                 </p>
             <?php
-                if ($same_user)
+                if ($same_member)
                 {
-                    echo anchor('/users/edit_profile/'.$query->id, 'Edit profile', 'class="button"');
+                    echo anchor('/members/edit_profile/'.$query->id, 'Edit profile', 'class="button"');
                 }
             ?>
             </fieldset>
