@@ -3,10 +3,15 @@
         <fieldset>
             <legend>Add Member</legend>
 
-            <?php
+            <?php            
+                $roles  = unserialize(MEMBER_ROLES);
+                $states = unserialize(MEMBER_STATES);
+                
+                $member_role = $this->session->userdata('member_role');
+                
                 $team = $this->session->userdata('teamdata');
 
-                echo form_open('languages/'.$team->shortname.'/members/add');
+                echo form_open('languages/'.$team->shortname.'/members/add','class="custom"');
             ?>
 
             <div class="row">
@@ -86,20 +91,50 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="row">
+                <div class="large-6 columns">
+                    <?php echo form_label('Member role'); ?>
+                    <div class="row collapse">
+                        <?php
+                        echo '<select name="role" class="medium">';
+                            echo '<option value="'.MEMBER_ROLE_TRANSLATOR.'"  selected >'.$roles[MEMBER_ROLE_TRANSLATOR]. '</option>';
+                            echo '<option value="'.MEMBER_ROLE_TRANSCRIBER.'" >'.$roles[MEMBER_ROLE_TRANSCRIBER].'</option>';
+                            echo '<option value="'.MEMBER_ROLE_COORDINATION.'" >'.$roles[MEMBER_ROLE_COORDINATION].'</option>';
+                            if ($member_role==MEMBER_ROLE_ADMINISTRATOR)
+                                echo '<option value="'.MEMBER_ROLE_ADMINISTRATOR.'" >'.$roles[MEMBER_ROLE_ADMINISTRATOR].'</option>';
+                        echo '</select>'
+                        ?>
+                    </div>
+                </div>
+            </div>
+            
+            <br />
 
+            <div class="row">
+                <div class="large-6 columns">
+                    <?php echo form_label('Member state'); ?>
+                    <div class="row collapse">
+                        <?php
+                        echo '<select name="state" class="medium">';
+                            echo '<option value="'.MEMBER_STATE_INACTIVE.'" >'.$states[MEMBER_STATE_INACTIVE]. '</option>';
+                            echo '<option value="'.MEMBER_STATE_ACTIVE.'" selected >'.$states[MEMBER_STATE_ACTIVE]. '</option>';
+                            echo '<option value="'.MEMBER_STATE_WAINTING_CONFIRMATION.'" >'.$states[MEMBER_STATE_WAINTING_CONFIRMATION]. '</option>';
+                        echo '</select>'
+                        ?>
+                    </div>
+                </div>
+            </div>
+            
             <div class="row">
                 <div class="large-6 columns">
                     <?php echo form_hidden(array('password'=>'lti')); ?>
                     <?php echo form_hidden(array('language_id'=>$team->id)); ?>
-                    <?php echo form_hidden(array('state'=>MEMBER_STATE_ACTIVE)); ?>
-                    <?php echo form_hidden(array('role'=>MEMBER_ROLE_TRANSLATOR)); ?>
                     <?php echo form_hidden(array('description'=>'')); ?>
                     <?php echo form_submit('submit','Add member','class="button"'); ?>
                 </div>
             </div>
-
-            <br/>
-
+            
             <?php
                 echo form_close();
             ?>

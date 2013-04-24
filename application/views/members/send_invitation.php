@@ -16,12 +16,6 @@ $query = $this->members_model->get_members($id);
         <br />
         
         <?php
-//        
-//        $config['protocol'] = 'smtp';
-//        $config['smtp_host'] = 'ssl://smtp.googlemail.com';
-//        $config['smtp_user'] = 'michaelmarquesbr@gmail.com';
-//        $config['smtp_pass'] = 'usedforsmtp23';
-//        $config['smtp_port'] = '465'; 
         
         $config['charset'] = 'utf-8';
         $config['wordwrap'] = TRUE;

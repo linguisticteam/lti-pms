@@ -167,7 +167,7 @@ else
                         echo form_hidden('id',$query->id);
                         echo form_hidden('original_email',$query->email);
                         echo form_hidden(array('language_id'=>$team->id));
-                        echo form_submit('submit','Edit member','class="button"'); 
+                        echo form_submit('submit','Save changes','class="button"'); 
                     ?>
                 </div>
             </div>

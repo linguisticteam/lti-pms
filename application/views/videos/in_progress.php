@@ -22,8 +22,11 @@ if (!empty($videos_inprogress))
     $i = 1;
     foreach ($videos as $item):
 
-        $translators  = $this->members_model->get_members_name_by_function($item->id,FUNCTION_TRANSLATE);
-        $proofreaders = $this->members_model->get_members_name_by_function($item->id,FUNCTION_PROOFREAD);
+        $translators = merge_members($this->members_model->get_members_name_by_function($item->id,FUNCTION_TRANSLATE), 
+                                     $this->members_model->get_out_members_by_function($item->id,FUNCTION_TRANSLATE));
+        
+        $proofreaders = merge_members($this->members_model->get_members_name_by_function($item->id,FUNCTION_PROOFREAD), 
+                                      $this->members_model->get_out_members_by_function($item->id,FUNCTION_PROOFREAD));
 
         $w_l = (!empty($item->working_location)) ? '<a href="'.$item->working_location.'" target="_blank">go</a> -
                                                     <a href="' . $item->working_location . '/transcriptInformation/" target="_blank">info</a>' : '';
@@ -44,10 +47,12 @@ if (!empty($videos_inprogress))
                               $w_l,
                               $item->duration, $s_d,
                               ($member_role >= MEMBER_ROLE_TRANSLATOR)?
-                              (count($translators)>1?implode(", ", $translators):$translators[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/in_progress','I did it!')):
+                              (count($translators)>1?implode(", ", $translators)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/in_progress','I did it!'):
+                                                     $translators[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/in_progress','I did it!')):
                               (count($translators)>1?implode(", ", $translators):$translators[0]),
                               ($member_role >= MEMBER_ROLE_TRANSLATOR)?
-                              (count($proofreaders)>1?implode(", ", $proofreaders):$proofreaders[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/in_progress','I did it!')):
+                              (count($proofreaders)>1?implode(", ", $proofreaders)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/in_progress','I did it!'):
+                                                      $proofreaders[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/in_progress','I did it!')):
                               (count($proofreaders)>1?implode(", ", $proofreaders):$proofreaders[0]),
                               $f, $n,
             //                "<span title='$item->comments'>read</span>",
@@ -62,4 +67,17 @@ if (!empty($videos_inprogress))
 else
 {
     echo '<div class="alert-box ">There is no videos in progress! Hum... we must to be a new team!</div>';
+}
+
+function merge_members($members, $out_members)
+{
+    if ($out_members)
+    {
+        foreach ($out_members as $row)
+        {
+            array_push($members, '*'.urldecode($row) );
+        }
+    }
+    
+    return $members;
 }

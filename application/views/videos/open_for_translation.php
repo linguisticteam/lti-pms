@@ -22,11 +22,20 @@ if (!empty($videos_inprogress))
     $i = 1;
     foreach ($videos as $item):
 
-        $transcribers = $this->members_model->get_members_name_by_function($item->id,FUNCTION_TRANSCRIBE);
-        $first_proofs = $this->members_model->get_members_name_by_function($item->id,FUNCTION_FIRST_PROOFREAD);
-        $time_stamper = $this->members_model->get_members_name_by_function($item->id,FUNCTION_TIMESTAMP);
-        $final_proofs = $this->members_model->get_members_name_by_function($item->id,FUNCTION_FINAL_PROOFREAD);
-        $final_review = $this->members_model->get_members_name_by_function($item->id,FUNCTION_FINAL_REVIEW);
+        $transcribers = merge_members($this->members_model->get_members_name_by_function($item->id,FUNCTION_TRANSCRIBE), 
+                                      $this->members_model->get_out_members_by_function($item->id,FUNCTION_TRANSCRIBE));
+
+        $first_proofs = merge_members($this->members_model->get_members_name_by_function($item->id,FUNCTION_FIRST_PROOFREAD),
+                                      $this->members_model->get_out_members_by_function($item->id,FUNCTION_FIRST_PROOFREAD));
+        
+        $time_stamper = merge_members($this->members_model->get_members_name_by_function($item->id,FUNCTION_TIMESTAMP),
+                                      $this->members_model->get_out_members_by_function($item->id,FUNCTION_TIMESTAMP));
+        
+        $final_proofs = merge_members($this->members_model->get_members_name_by_function($item->id,FUNCTION_FINAL_PROOFREAD),
+                                      $this->members_model->get_out_members_by_function($item->id,FUNCTION_FINAL_PROOFREAD));
+        
+        $final_review = merge_members($this->members_model->get_members_name_by_function($item->id,FUNCTION_FINAL_REVIEW),
+                                      $this->members_model->get_out_members_by_function($item->id,FUNCTION_FINAL_REVIEW)); 
 
         $w_l = (!empty($item->working_location)) ? '<a href="'.$item->working_location.'" target="_blank">go</a> -
                                                     <a href="' . $item->working_location . '/transcriptInformation/" target="_blank">info</a>' : '';
@@ -47,19 +56,24 @@ if (!empty($videos_inprogress))
                               $w_l,
                               $item->duration, $s_d,
                               ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
-                              (count($transcribers)>1?implode(", ", $transcribers):$transcribers[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/open_for_translation','I did it!')):
+                              (count($transcribers)>1?implode(", ", $transcribers)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/open_for_translation','I did it!'):
+                                                      $transcribers[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/open_for_translation','I did it!')):
                               (count($transcribers)>1?implode(", ", $transcribers):$transcribers[0]),
                               ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
-                              (count($first_proofs)>1?implode(", ", $first_proofs):$first_proofs[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FIRST_PROOFREAD.'/open_for_translation','I did it!')):
+                              (count($first_proofs)>1?implode(", ", $first_proofs)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FIRST_PROOFREAD.'/open_for_translation','I did it!'):
+                                                      $first_proofs[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FIRST_PROOFREAD.'/open_for_translation','I did it!')):
                               (count($first_proofs)>1?implode(", ", $first_proofs):$first_proofs[0]),
                               ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
-                              (count($time_stamper)>1?implode(", ", $time_stamper):$time_stamper[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TIMESTAMP.'/open_for_translation','I did it!')):
+                              (count($time_stamper)>1?implode(", ", $time_stamper)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TIMESTAMP.'/open_for_translation','I did it!'):
+                                                      $time_stamper[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TIMESTAMP.'/open_for_translation','I did it!')):
                               (count($time_stamper)>1?implode(", ", $time_stamper):$time_stamper[0]),
                               ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
-                              (count($final_proofs)>1?implode(", ", $final_proofs):$final_proofs[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_PROOFREAD.'/open_for_translation','I did it!')):
+                              (count($final_proofs)>1?implode(", ", $final_proofs)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_PROOFREAD.'/open_for_translation','I did it!'):
+                                                      $final_proofs[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_PROOFREAD.'/open_for_translation','I did it!')):
                               (count($final_proofs)>1?implode(", ", $final_proofs):$final_proofs[0]),
                               ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
-                              (count($final_review)>1?implode(", ", $final_review):$final_review[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_REVIEW.'/open_for_translation','I did it!')):
+                              (count($final_review)>1?implode(", ", $final_review)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_REVIEW.'/open_for_translation','I did it!'):
+                                                      $final_review[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_REVIEW.'/open_for_translation','I did it!')):
                               (count($final_review)>1?implode(", ", $final_review):$final_review[0]),
                               $f, $n,
                               ($member_role >= MEMBER_ROLE_COORDINATION)?
@@ -73,4 +87,17 @@ if (!empty($videos_inprogress))
 else
 {
     echo '<div class="alert-box ">There is no videos opened for translation! Why?!</div>';
+}
+
+function merge_members($members, $out_members)
+{
+    if ($out_members)
+    {
+        foreach ($out_members as $row)
+        {
+            array_push($members, '*'.urldecode($row) );
+        }
+    }
+    
+    return $members;
 }

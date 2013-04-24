@@ -73,26 +73,6 @@ class Members_model extends CI_Model
         }
         
         return $list_names;
-        
-//        $where = 'media_id = '.$media_id. ' AND function = '. $function;
-//        $this->db->where($where);
-//        $this->db->order_by("order", "asc"); 
-//        $query = $this->db->get('pms_workgroups');
-// 
-//       if($query->num_rows() > 0)
-//        {
-//            $list = array();
-//            foreach ($query->result() as $row)
-//            {
-//                array_push($list,$this->get_members($row->member_id)->name);
-//            }
-//
-//            return $list;
-//        }
-//        else
-//        {
-//            return FALSE;
-//        }
     }
     
     public function get_out_members_by_function($media_id, $function)
