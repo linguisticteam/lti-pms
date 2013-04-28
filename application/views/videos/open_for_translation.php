@@ -56,28 +56,28 @@ if (!empty($videos_inprogress))
                               $w_l,
                               $item->duration, $s_d,
                               ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
-                              (count($transcribers)>1?implode(", ", $transcribers)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/open_for_translation','I did it!'):
-                                                      $transcribers[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/open_for_translation','I did it!')):
+                              (count($transcribers)>1?implode(", ", $transcribers)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/open_for_translation','I did it!'):
+                                                      $transcribers[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/open_for_translation','I did it!')):
                               (count($transcribers)>1?implode(", ", $transcribers):$transcribers[0]),
                               ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
-                              (count($first_proofs)>1?implode(", ", $first_proofs)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FIRST_PROOFREAD.'/open_for_translation','I did it!'):
-                                                      $first_proofs[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FIRST_PROOFREAD.'/open_for_translation','I did it!')):
+                              (count($first_proofs)>1?implode(", ", $first_proofs)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FIRST_PROOFREAD.'/open_for_translation','I did it!'):
+                                                      $first_proofs[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FIRST_PROOFREAD.'/open_for_translation','I did it!')):
                               (count($first_proofs)>1?implode(", ", $first_proofs):$first_proofs[0]),
                               ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
-                              (count($time_stamper)>1?implode(", ", $time_stamper)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TIMESTAMP.'/open_for_translation','I did it!'):
-                                                      $time_stamper[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TIMESTAMP.'/open_for_translation','I did it!')):
+                              (count($time_stamper)>1?implode(", ", $time_stamper)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TIMESTAMP.'/open_for_translation','I did it!'):
+                                                      $time_stamper[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TIMESTAMP.'/open_for_translation','I did it!')):
                               (count($time_stamper)>1?implode(", ", $time_stamper):$time_stamper[0]),
                               ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
-                              (count($final_proofs)>1?implode(", ", $final_proofs)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_PROOFREAD.'/open_for_translation','I did it!'):
-                                                      $final_proofs[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_PROOFREAD.'/open_for_translation','I did it!')):
+                              (count($final_proofs)>1?implode(", ", $final_proofs)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_PROOFREAD.'/open_for_translation','I did it!'):
+                                                      $final_proofs[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_PROOFREAD.'/open_for_translation','I did it!')):
                               (count($final_proofs)>1?implode(", ", $final_proofs):$final_proofs[0]),
                               ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
-                              (count($final_review)>1?implode(", ", $final_review)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_REVIEW.'/open_for_translation','I did it!'):
-                                                      $final_review[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_REVIEW.'/open_for_translation','I did it!')):
+                              (count($final_review)>1?implode(", ", $final_review)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_REVIEW.'/open_for_translation','I did it!'):
+                                                      $final_review[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_REVIEW.'/open_for_translation','I did it!')):
                               (count($final_review)>1?implode(", ", $final_review):$final_review[0]),
                               $f, $n,
                               ($member_role >= MEMBER_ROLE_COORDINATION)?
-                              (anchor('languages/'.$team->shortname.'/videos/edit/'.$item->id,'[Edit]')):
+                              (anchor('languages/'.$team->langcode.'/videos/edit/'.$item->id,'[Edit]')):
                               (""));
         $i++;
     endforeach;

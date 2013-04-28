@@ -1,6 +1,6 @@
 <?php
 $id = $this->uri->segment(3);
-$team_shortname = $this->uri->segment(4);
+$team_langcode = $this->uri->segment(4);
 
 if ($id==NULL) redirect('members');
 

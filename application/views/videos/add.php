@@ -6,7 +6,7 @@
             <?php
                 $team = $this->session->userdata('teamdata');
 
-                echo form_open('languages/'.$team->shortname.'/videos/add','onsubmit="getDuration()" class="custom"');
+                echo form_open('languages/'.$team->langcode.'/videos/add','onsubmit="getDuration()" class="custom"');
             ?>
 
             <div class="row">

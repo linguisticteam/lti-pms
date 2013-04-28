@@ -18,7 +18,7 @@ if (!empty($members))
         $this->table->add_row($i, '<strong>'.$item->name.'</strong>', $item->email, 
                               $item->dotsub_id, $item->pootle_id, $item->facebook_id, $item->skype_id, $states[$item->state], $roles[$item->role], $s_d,
                               ( ($member_role >= MEMBER_ROLE_COORDINATION && $member_language==$team->id) || ($member_role==MEMBER_ROLE_ADMINISTRATOR) )?  
-                              (anchor('languages/'.$team->shortname.'/members/edit/'.$item->id,'[Edit]')).' '.(anchor('members/send_invitation/'.$item->id.'/'.$team->shortname,'[Send Invitation]','target="_blank"')):
+                              (anchor('languages/'.$team->langcode.'/members/edit/'.$item->id,'[Edit]')).' '.(anchor('members/send_invitation/'.$item->id.'/'.$team->langcode,'[Send Invitation]','target="_blank"')):
                               (""));
         $i++;
     endforeach;

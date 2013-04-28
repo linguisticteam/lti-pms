@@ -11,7 +11,7 @@
                 
                 $team = $this->session->userdata('teamdata');
 
-                echo form_open('languages/'.$team->shortname.'/members/add','class="custom"');
+                echo form_open('languages/'.$team->langcode.'/members/add','class="custom"');
             ?>
 
             <div class="row">

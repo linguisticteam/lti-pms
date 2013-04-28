@@ -26,15 +26,22 @@ class Language_teams_model extends CI_Model
         {
             return $appended_language_teams_array;
         }
-        else
-        {
+        else 
+       {
             return $appended_language_teams_array[0];
         }
     }
-
-    public function get_language_team_by_shortname($shortname)
+    
+    public function get_active_language_teams()
     {
-        $this->db->like('shortname',$shortname);
+        $this->db->where('team_permissions >',TEAM_NOT_ACTIVE);
+
+        return $this->get_language_teams();
+    }
+
+    public function get_language_team_by_langcode($langcode)
+    {
+        $this->db->where('langcode',$langcode);
 
         return $this->get_language_teams();
     }

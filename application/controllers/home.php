@@ -16,7 +16,7 @@ class Home extends CI_Controller
             'title' => 'Home',
             'type' => 'home',
             'view' => 'templates/home',
-            'language_teams' => $this->language_teams_model->get_language_teams(),
+            'language_teams' => $this->language_teams_model->get_active_language_teams(),
         );
         $this->load->view('controlpanel',$data);
 

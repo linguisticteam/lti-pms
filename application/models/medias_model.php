@@ -107,7 +107,7 @@ class Medias_model extends CI_Model
             $team = $this->session->userdata('teamdata');
             $this->session->set_userdata('video_added','Video added successfully');
 
-            redirect('languages/'.$team->shortname.'/videos/add');
+            redirect('languages/'.$team->langcode.'/videos/add');
         }
     }
 
@@ -120,7 +120,7 @@ class Medias_model extends CI_Model
             $team = $this->session->userdata('teamdata');
             $this->session->set_userdata('video_edited','Video edited successfully');
 
-            redirect('languages/'.$team->shortname.'/videos/edit/'.$condition['id']);
+            redirect('languages/'.$team->langcode.'/videos/edit/'.$condition['id']);
         }
     }
 

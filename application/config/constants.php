@@ -43,11 +43,30 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 |
 */
 
-/** TEAMS **/
-define('TEAM_CANNOT_TRANSCRIBE', 0);
-define('TEAM_CAN_TRANSCRIBE', 1);    
+/************ TEAMS ************/
 
-/** MEDIAS **/
+
+define('TEAM_NOT_ACTIVE', 0);
+define('TEAM_ACTIVE', 1);
+define('TEAM_CAN_TRANSCRIBE', 2);
+
+define('SOCIAL_NETWORK_YOUTUBE', 1);
+define('SOCIAL_NETWORK_FACEBOOK_GROUP', 2);
+define('SOCIAL_NETWORK_FACEBOOK_PAGE', 3);
+define('SOCIAL_NETWORK_TWITTER', 4);
+define('SOCIAL_NETWORK_WEBSITE', 5);
+define('SOCIAL_NETWORK_FORUM', 6);
+
+define('SOCIAL_NETWORKS', serialize (array ( 1 => "Youtube Channel",
+                                             2 => "Facebook Group",
+                                             3 => "Facebook Page",
+                                             4 => "Twitter",
+                                             5 => "Website",
+                                             6 => "Forum" )));
+
+
+/************ MEDIAS ************/
+
 
 define('STATE_DELETED', -1);
 define('STATE_OPEN_FOR_TRANSCRIPTION', 0);
@@ -81,7 +100,7 @@ define('MEDIA_STATES', serialize (array ( -1 => "Deleted",
                                           10 => "Posted",
                                           11 => "Repository",
                                           12 => "On hold",
-                                          13 => "Under error review",                                          
+                                          13 => "Under error review",
                                           14 => "Under error repair" )));
 
 define('MEDIA_CATEGORIES', serialize (array ( 1 => "TZM",
@@ -97,7 +116,8 @@ define('MEDIA_TYPE_AUDIO', 2);
 define('MEDIA_SUBTYPE_UNKNOWN', 0);
 
 
-/** MEMBERS **/
+/************ MEMBERS ************/
+
 
 define('FUNCTION_TRANSCRIBE', 0);
 define('FUNCTION_FIRST_PROOFREAD', 1);
@@ -125,48 +145,6 @@ define('MEMBER_ROLES', serialize (array ( 1 => "Translator",
                                           2 => "Transcriber",
                                           3 => "Coordination",
                                           4 => "Administrator")));
-
-
-
-
-//define('TRANSLATOR_ACTIVE', 0);
-//define('TRANSLATOR_INACTIVE', -1);    
-
-//
-//
-//define('TEXT_STATE_DELETED', -1);
-//define('TEXT_STATE_OPEN_TO_TRANSLATION', 0);
-//define('TEXT_STATE_TRANSLATING', 1);
-//define('TEXT_STATE_PROOFREADING', 2);
-//define('TEXT_STATE_READY_TO_POST', 3);
-//define('TEXT_STATE_POSTED', 4);
-//define('TEXT_STATE_REPOSITORY', 5);
-//
-//define('VIDEO_STATES', serialize (array ( 0 => "Open to translation", 
-//                                          1 => "Translating", 
-//                                          2 => "Proofreading", 
-//                                          3 => "Ready to post", 
-//                                          4 => "Posted", 
-//                                          5 => "Repository" )));
-//
-//define('VIDEO_TYPES', serialize (array ( 0 => "TZM",
-//                                         1 => "PJ",
-//                                         2 => "TVP",
-//                                         3 => "COMM",
-//                                         4 => "EXT" )));
-//
-//
-//define('TEXT_STATES', serialize (array ( 0 => "Open to translation", 
-//                                         1 => "Translating", 
-//                                         2 => "Proofreading", 
-//                                         3 => "Ready to post", 
-//                                         4 => "Posted", 
-//                                         5 => "Repository" )));
-//
-//
-//
-//define('DEFAULT_USER', 'admin');
-//define('DEFAULT_PASSWORD', 'admin');
 
 
 /* End of file constants.php */

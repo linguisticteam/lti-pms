@@ -28,7 +28,7 @@ else
             <legend>Edit Members</legend>
 
             <?php
-                echo form_open('languages/'.$team->shortname.'/members/edit/'.$id,'class="custom"');
+                echo form_open('languages/'.$team->langcode.'/members/edit/'.$id,'class="custom"');
             ?>
 
             <div class="row">

@@ -47,17 +47,17 @@ if (!empty($videos_inprogress))
                               $w_l,
                               $item->duration, $s_d,
                               ($member_role >= MEMBER_ROLE_TRANSLATOR)?
-                              (count($translators)>1?implode(", ", $translators)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/in_progress','I did it!'):
-                                                     $translators[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/in_progress','I did it!')):
+                              (count($translators)>1?implode(", ", $translators)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/in_progress','I did it!'):
+                                                     $translators[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/in_progress','I did it!')):
                               (count($translators)>1?implode(", ", $translators):$translators[0]),
                               ($member_role >= MEMBER_ROLE_TRANSLATOR)?
-                              (count($proofreaders)>1?implode(", ", $proofreaders)." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/in_progress','I did it!'):
-                                                      $proofreaders[0]." <br/>".anchor('languages/'.$team->shortname.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/in_progress','I did it!')):
+                              (count($proofreaders)>1?implode(", ", $proofreaders)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/in_progress','I did it!'):
+                                                      $proofreaders[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/in_progress','I did it!')):
                               (count($proofreaders)>1?implode(", ", $proofreaders):$proofreaders[0]),
                               $f, $n,
             //                "<span title='$item->comments'>read</span>",
                               ($member_role >= MEMBER_ROLE_COORDINATION)?  
-                              (anchor('languages/'.$team->shortname.'/videos/edit/'.$item->id,'[Edit]')):
+                              (anchor('languages/'.$team->langcode.'/videos/edit/'.$item->id,'[Edit]')):
                               (""));
         $i++;
     endforeach;

@@ -9,9 +9,9 @@ class Members extends CI_Controller {
     
     public function index()
     {
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
         
-        $team = $this->language_teams_model->get_language_team_by_shortname($shortname);
+        $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
         
         $this->session->set_userdata('teamdata', $team);
         
@@ -26,9 +26,9 @@ class Members extends CI_Controller {
     
     public function add()
     {
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
 
-        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_shortname($shortname));
+        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_langcode($langcode));
 
         $this->form_validation->set_rules('name','NAME','trim|required|max_length[255]');
         $this->form_validation->set_rules('email','EMAIL','trim|required|valid_email|is_unique[pms_members.email]');
@@ -52,9 +52,9 @@ class Members extends CI_Controller {
     
     public function edit()
     {
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
 
-        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_shortname($shortname));
+        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_langcode($langcode));
 
         $this->form_validation->set_rules('name','NAME','trim|required|max_length[255]');
         if ($this->input->post('original_email') != $this->input->post('email'))

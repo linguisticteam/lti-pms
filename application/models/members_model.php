@@ -126,7 +126,7 @@ class Members_model extends CI_Model
             $team = $this->session->userdata('teamdata');
             $this->session->set_userdata('member_added','Member added successfully');
             
-            redirect('languages/'.$team->shortname.'/members/add');
+            redirect('languages/'.$team->langcode.'/members/add');
         }
     }
     
@@ -139,7 +139,7 @@ class Members_model extends CI_Model
             $team = $this->session->userdata('teamdata');
             $this->session->set_userdata('member_edited','Member edited successfully');
             
-            redirect('languages/'.$team->shortname.'/members/edit/'.$condition['id']);
+            redirect('languages/'.$team->langcode.'/members/edit/'.$condition['id']);
         }
     }
     

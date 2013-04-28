@@ -21,9 +21,9 @@ class Videos extends CI_Controller {
 
     public function transcribing()
     {
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
 
-        $team = $this->language_teams_model->get_language_team_by_shortname($shortname);
+        $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
         
         $this->session->set_userdata('teamdata', $team);
         
@@ -42,13 +42,13 @@ class Videos extends CI_Controller {
         $function = $this->uri->segment(6);
         $stage = $this->uri->segment(7);
 
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
         
         $this->medias_model->register_function($media_id, $function);
 
-        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_shortname($shortname));
+        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_langcode($langcode));
         
-        redirect('languages/'.$shortname.'/videos/'.$stage);
+        redirect('languages/'.$langcode.'/videos/'.$stage);
     }
     
     public function register_member_function()
@@ -57,14 +57,14 @@ class Videos extends CI_Controller {
         $function = $this->uri->segment(6);
         $member_id = $this->uri->segment(7);
 
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
        
         // I don't know why the method has been called twice.
         // The second time it has a value of 'js'
         if ($member_id!='js')        
             $this->medias_model->register_function($media_id, $function, $member_id);
 
-        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_shortname($shortname));
+        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_langcode($langcode));
         
         $data = array(
             'title' => 'Edit video',
@@ -81,11 +81,11 @@ class Videos extends CI_Controller {
         $function = $this->uri->segment(6);
         $member_id = $this->uri->segment(7);
 
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
         
         $this->medias_model->unregister_function($media_id, $function, $member_id);
 
-        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_shortname($shortname));
+        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_langcode($langcode));
         
         $data = array(
             'title' => 'Edit video',
@@ -102,11 +102,11 @@ class Videos extends CI_Controller {
         $state = $this->uri->segment(6);        
         $inc = $this->uri->segment(7);        
 
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
         
         $this->medias_model->go_to_stage($media_id, $state, $inc);
 
-        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_shortname($shortname));
+        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_langcode($langcode));
         
         $data = array(
             'title' => 'Edit video',
@@ -121,13 +121,13 @@ class Videos extends CI_Controller {
     {
         $media_id = $this->uri->segment(5);   
 
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
         
         $this->medias_model->go_to_stage($media_id, STATE_FINAL_REVIEW_COMPLETED, 1);
         
         $this->medias_model->release_translations($media_id);
 
-        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_shortname($shortname));
+        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_langcode($langcode));
         
         $data = array(
             'title' => 'Edit video',
@@ -140,9 +140,9 @@ class Videos extends CI_Controller {
 
     public function open_for_translation()
     {
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
 
-        $team = $this->language_teams_model->get_language_team_by_shortname($shortname);
+        $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
         
         $this->session->set_userdata('teamdata', $team);
 
@@ -150,7 +150,7 @@ class Videos extends CI_Controller {
             'title' => 'Videos open for translation',
             'type' => 'team',
             'view' => 'videos/open_for_translation',
-            'team' => $this->language_teams_model->get_language_team_by_shortname($shortname),
+            'team' => $this->language_teams_model->get_language_team_by_langcode($langcode),
             'videos_inprogress' => $this->medias_model->get_videos_open_for_translation($team->id),
         );
         $this->load->view('controlpanel',$data);
@@ -158,9 +158,9 @@ class Videos extends CI_Controller {
 
     public function in_progress()
     {        
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
 
-        $team = $this->language_teams_model->get_language_team_by_shortname($shortname);
+        $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
         
         $this->session->set_userdata('teamdata', $team);
 
@@ -168,7 +168,7 @@ class Videos extends CI_Controller {
             'title' => 'Videos in progress',
             'type' => 'team',
             'view' => 'videos/in_progress',
-            'team' => $this->language_teams_model->get_language_team_by_shortname($shortname),
+            'team' => $this->language_teams_model->get_language_team_by_langcode($langcode),
             'videos_inprogress' => $this->medias_model->get_videos_in_progress($team->id),
         );
         $this->load->view('controlpanel',$data);
@@ -176,9 +176,9 @@ class Videos extends CI_Controller {
 
     public function ready_to_post()
     {
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
 
-        $team = $this->language_teams_model->get_language_team_by_shortname($shortname);
+        $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
         
         $this->session->set_userdata('teamdata', $team);
 
@@ -186,7 +186,7 @@ class Videos extends CI_Controller {
             'title' => 'Videos ready to post',
             'type' => 'team',
             'view' => 'videos/ready_to_post',
-            'team' => $this->language_teams_model->get_language_team_by_shortname($shortname),
+            'team' => $this->language_teams_model->get_language_team_by_langcode($langcode),
             'videos_inprogress' => $this->medias_model->get_videos_ready_to_post($team->id),
         );
         $this->load->view('controlpanel',$data);
@@ -194,9 +194,9 @@ class Videos extends CI_Controller {
 
     public function posted()
     {
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
 
-        $team = $this->language_teams_model->get_language_team_by_shortname($shortname);
+        $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
         
         $this->session->set_userdata('teamdata', $team);
 
@@ -204,7 +204,7 @@ class Videos extends CI_Controller {
             'title' => 'Videos posted',
             'type' => 'team',
             'view' => 'videos/posted',
-            'team' => $this->language_teams_model->get_language_team_by_shortname($shortname),
+            'team' => $this->language_teams_model->get_language_team_by_langcode($langcode),
             'videos_inprogress' => $this->medias_model->get_videos_posted($team->id),
         );
         $this->load->view('controlpanel',$data);
@@ -212,9 +212,9 @@ class Videos extends CI_Controller {
 
     public function repository()
     {
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
 
-        $team = $this->language_teams_model->get_language_team_by_shortname($shortname);
+        $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
         
         $this->session->set_userdata('teamdata', $team);
 
@@ -222,7 +222,7 @@ class Videos extends CI_Controller {
             'title' => 'Videos in repository',
             'type' => 'team',
             'view' => 'videos/repository',
-            'team' => $this->language_teams_model->get_language_team_by_shortname($shortname),
+            'team' => $this->language_teams_model->get_language_team_by_langcode($langcode),
             'videos_inprogress' => $this->medias_model->get_videos_repository($team->id),
         );
         $this->load->view('controlpanel',$data);
@@ -230,9 +230,9 @@ class Videos extends CI_Controller {
 
     public function on_hold()
     {
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
 
-        $team = $this->language_teams_model->get_language_team_by_shortname($shortname);
+        $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
         
         $this->session->set_userdata('teamdata', $team);
 
@@ -240,7 +240,7 @@ class Videos extends CI_Controller {
             'title' => 'Videos on hold',
             'type' => 'team',
             'view' => 'videos/on_hold',
-            'team' => $this->language_teams_model->get_language_team_by_shortname($shortname),
+            'team' => $this->language_teams_model->get_language_team_by_langcode($langcode),
             'videos_inprogress' => $this->medias_model->get_videos_on_hold($team->id),
         );
         $this->load->view('controlpanel',$data);
@@ -248,9 +248,9 @@ class Videos extends CI_Controller {
 
     public function add()
     {
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
 
-        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_shortname($shortname));
+        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_langcode($langcode));
 
         $this->form_validation->set_rules('title','TITLE','trim|required|max_length[255]');
         $this->form_validation->set_rules('description','DESCRIPTION','trim|required|max_length[255]');
@@ -278,9 +278,9 @@ class Videos extends CI_Controller {
 
     public function edit()
     {
-        $shortname = $this->uri->segment(2);
+        $langcode = $this->uri->segment(2);
 
-        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_shortname($shortname));
+        $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_langcode($langcode));
 
         $this->form_validation->set_rules('title','TITLE','trim|required|max_length[255]');
         $this->form_validation->set_rules('description','DESCRIPTION','trim|required|max_length[255]');

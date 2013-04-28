@@ -12,7 +12,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <title><?php echo $team->name; ?> - LTI System Manager</title>
+        <title><?php print_r($team); echo $team->name; ?> - LTI System Manager</title>
 
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/general_enclosed_foundicons.css" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/general_enclosed_foundicons_ie7.css" />
@@ -52,9 +52,9 @@
                     if ( ($member_role>=MEMBER_ROLE_COORDINATION && $member_language==$team->id) || ($member_role==MEMBER_ROLE_ADMINISTRATOR) )
                     {
                     ?>
-                    <li class="has-dropdown"><?php echo anchor('languages/'.$team->shortname, $team->name); ?>
+                    <li class="has-dropdown"><?php echo anchor('languages/'.$team->langcode, $team->name); ?>
                         <ul class="dropdown">
-                            <li><?php echo anchor('languages/'.$team->shortname.'/configuration', 'Configuration'); ?></li>
+                            <li><?php echo anchor('languages/'.$team->langcode.'/configuration', 'Configuration'); ?></li>
                         </ul>
                     </li>
                     <?php
@@ -62,34 +62,34 @@
                     else
                     {
                     ?>
-                    <li class="left"><?php echo anchor('languages/'.$team->shortname, $team->name); ?>
+                    <li class="left"><?php echo anchor('languages/'.$team->langcode, $team->name); ?>
                     <?php
                     }
                     ?>
 
                     <li class="divider"></li>
-                    <li class="has-dropdown"><?php echo anchor('languages/'.$team->shortname.'/videos', 'Videos'); ?>
+                    <li class="has-dropdown"><?php echo anchor('languages/'.$team->langcode.'/videos', 'Videos'); ?>
 
                         <ul class="dropdown">
                             <?php if ($team->team_permissions==TEAM_CAN_TRANSCRIBE)
                             {
                             ?>
                                 <li><label>Transcription</label></li>
-                                <li><?php echo anchor('languages/'.$team->shortname.'/videos/transcribing', 'Transcribing'); ?></li>
-                                <li><?php echo anchor('languages/'.$team->shortname.'/videos/open_for_translation', 'Open for translation'); ?></li>
+                                <li><?php echo anchor('languages/'.$team->langcode.'/videos/transcribing', 'Transcribing'); ?></li>
+                                <li><?php echo anchor('languages/'.$team->langcode.'/videos/open_for_translation', 'Open for translation'); ?></li>
                             <?php
                             }
                             ?>
                             <li><label>Translation</label></li>
-                            <li><?php echo anchor('languages/'.$team->shortname.'/videos/in_progress', 'In progress'); ?></li>
-                            <li><?php echo anchor('languages/'.$team->shortname.'/videos/ready_to_post', 'Ready to post'); ?></li>
-                            <li><?php echo anchor('languages/'.$team->shortname.'/videos/posted', 'Posted'); ?></li>
-                            <li><?php echo anchor('languages/'.$team->shortname.'/videos/repository', 'Repository'); ?></li>
-                            <li><?php echo anchor('languages/'.$team->shortname.'/videos/on_hold', 'On hold'); ?></li>
+                            <li><?php echo anchor('languages/'.$team->langcode.'/videos/in_progress', 'In progress'); ?></li>
+                            <li><?php echo anchor('languages/'.$team->langcode.'/videos/ready_to_post', 'Ready to post'); ?></li>
+                            <li><?php echo anchor('languages/'.$team->langcode.'/videos/posted', 'Posted'); ?></li>
+                            <li><?php echo anchor('languages/'.$team->langcode.'/videos/repository', 'Repository'); ?></li>
+                            <li><?php echo anchor('languages/'.$team->langcode.'/videos/on_hold', 'On hold'); ?></li>
 
                             <?php if ($team->team_permissions==TEAM_CAN_TRANSCRIBE){ ?>
                             <li class="divider"></li>
-                            <li><?php echo anchor('languages/'.$team->shortname.'/videos/add', 'Add video'); ?></li>
+                            <li><?php echo anchor('languages/'.$team->langcode.'/videos/add', 'Add video'); ?></li>
                             <?php
                             }
                             ?>
@@ -100,14 +100,14 @@
                     if ($member_role>=MEMBER_ROLE_COORDINATION)
                     {
                     ?>
-                    <li class="has-dropdown"><?php echo anchor('languages/'.$team->shortname.'/members', 'Members'); ?>
+                    <li class="has-dropdown"><?php echo anchor('languages/'.$team->langcode.'/members', 'Members'); ?>
                         
                         <?php
                         if ( ($member_role>=MEMBER_ROLE_COORDINATION && $member_language==$team->id) || ($member_role==MEMBER_ROLE_ADMINISTRATOR) )
                         {
                         ?>
                         <ul class="dropdown">
-                            <li><?php echo anchor('languages/'.$team->shortname.'/members/add', 'Add member'); ?></li>
+                            <li><?php echo anchor('languages/'.$team->langcode.'/members/add', 'Add member'); ?></li>
                         </ul>
                         <?php
                         }
