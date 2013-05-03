@@ -12,7 +12,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <title><?php print_r($team); echo $team->name; ?> - LTI System Manager</title>
+        <title><?php echo $team->name; ?> - LTI System Manager</title>
 
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/general_enclosed_foundicons.css" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/general_enclosed_foundicons_ie7.css" />
@@ -87,7 +87,7 @@
                             <li><?php echo anchor('languages/'.$team->langcode.'/videos/repository', 'Repository'); ?></li>
                             <li><?php echo anchor('languages/'.$team->langcode.'/videos/on_hold', 'On hold'); ?></li>
 
-                            <?php if ($team->team_permissions==TEAM_CAN_TRANSCRIBE){ ?>
+                            <?php if ($team->team_permissions==TEAM_CAN_TRANSCRIBE && $member_role==MEMBER_ROLE_ADMINISTRATOR){ ?>
                             <li class="divider"></li>
                             <li><?php echo anchor('languages/'.$team->langcode.'/videos/add', 'Add video'); ?></li>
                             <?php

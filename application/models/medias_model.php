@@ -35,7 +35,7 @@ class Medias_model extends CI_Model
     public function get_videos_transcribing($team_id)
     {
         $where = 'project_language_id ='.$team_id.' AND type ='.MEDIA_TYPE_VIDEO.' AND state ='.STATE_OPEN_FOR_TRANSCRIPTION.' OR state='.STATE_OPEN_FOR_FIRST_PROOFREADING.' OR state='.STATE_TIMESTAMP_SHIFTING.
-                 ' OR state='.STATE_FINAL_PROOFREADING.' OR state='.STATE_WAINTING_FINAL_REVIEW.' OR state='.STATE_FINAL_REVIEW_COMPLETED;
+                 ' OR state='.STATE_FINAL_PROOFREADING.' OR state='.STATE_WAINTING_FINAL_REVIEW.' OR state='.STATE_FINAL_REVIEW_COMPLETED. ' ORDER BY state';
         $this->db->where($where);
 
         return $this->get_medias();
