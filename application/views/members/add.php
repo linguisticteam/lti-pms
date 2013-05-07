@@ -1,3 +1,19 @@
+<?php
+
+$team = $this->session->userdata('teamdata');
+$member_role = $this->session->userdata('member_role');
+$member_language = $this->session->userdata('member_language');
+
+if ($member_role != MEMBER_ROLE_ADMINISTRATOR)
+{
+    if ($member_role != MEMBER_ROLE_COORDINATION || $member_language != $team->id)
+    {
+        redirect('');
+    }        
+}
+
+?>
+
 <div class="row">
     <div class="large-12 columns">
         <fieldset>
@@ -6,10 +22,6 @@
             <?php            
                 $roles  = unserialize(MEMBER_ROLES);
                 $states = unserialize(MEMBER_STATES);
-                
-                $member_role = $this->session->userdata('member_role');
-                
-                $team = $this->session->userdata('teamdata');
 
                 echo form_open('languages/'.$team->langcode.'/members/add','class="custom"');
             ?>

@@ -3,9 +3,19 @@ $id = $this->uri->segment(5);
 
 if ($id==NULL) redirect('videos');
 
-$query = $this->medias_model->get_medias($id);
-
 $team = $this->session->userdata('teamdata');
+$member_role = $this->session->userdata('member_role');
+$member_language = $this->session->userdata('member_language');
+
+if ($member_role != MEMBER_ROLE_ADMINISTRATOR)
+{
+    if ($member_role != MEMBER_ROLE_COORDINATION || $member_language != $team->id)
+    {
+        redirect('');
+    }        
+}
+
+$query = $this->medias_model->get_medias($id);
 
 $team_members = $this->members_model->get_members_by_language($team->id);
 

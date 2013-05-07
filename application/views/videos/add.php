@@ -1,11 +1,25 @@
+<?php
+
+$team = $this->session->userdata('teamdata');
+$member_role = $this->session->userdata('member_role');
+$member_language = $this->session->userdata('member_language');
+
+if ($member_role != MEMBER_ROLE_ADMINISTRATOR)
+{
+    if ($member_role != MEMBER_ROLE_COORDINATION || $member_language != $team->id)
+    {
+        redirect('');
+    }        
+}
+
+?>
+
 <div class="row">
     <div class="large-12 columns">
         <fieldset>
             <legend>Add Video</legend>
 
             <?php
-                $team = $this->session->userdata('teamdata');
-
                 echo form_open('languages/'.$team->langcode.'/videos/add','onsubmit="getDuration()" class="custom"');
             ?>
 

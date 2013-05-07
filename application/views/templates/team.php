@@ -29,7 +29,7 @@ echo '<h4>Team status:</h4>';
 
 $this->table->add_row('Active members', '<strong>'.$active_members.'</strong>');
 
-if ($team->team_permissions==1)
+if ($team->team_permissions==TEAM_CAN_TRANSCRIBE)
 {    
     $this->table->add_row('Videos in transcribing', '<strong>'.$v_stage_00.'</strong>');
     $this->table->add_row('Videos open for first proofreading', '<strong>'.$v_stage_01.'</strong>');

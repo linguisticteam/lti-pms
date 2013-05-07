@@ -3,6 +3,14 @@ $team = $this->session->userdata('teamdata');
 $member_role = $this->session->userdata('member_role');
 $member_language = $this->session->userdata('member_language');
 
+if ($member_role != MEMBER_ROLE_ADMINISTRATOR)
+{
+    if ($member_role != MEMBER_ROLE_COORDINATION || $member_language != $team->id)
+    {
+        redirect('');
+    }        
+}
+
 if (!empty($members))
 {    
     $this->table->set_heading('#','Name','Email','dotsub','Pootle','Facebook','Skype','State','Role','Started','');

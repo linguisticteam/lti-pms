@@ -7,7 +7,18 @@ $query = $this->members_model->get_members($id);
 
 if ($query==NULL) redirect('');
 
+$team = $this->session->userdata('teamdata');
 $member_role = $this->session->userdata('member_role');
+$member_language = $this->session->userdata('member_language');
+
+if ($member_role != MEMBER_ROLE_ADMINISTRATOR)
+{
+    if ($member_role != MEMBER_ROLE_COORDINATION || $member_language != $team->id)
+    {
+        redirect('');
+    }        
+}
+
 $member_id = $this->session->userdata('member_id');
 
 $same_member = $member_id == $query->id ? TRUE : FALSE;

@@ -3,12 +3,19 @@ $id = $this->uri->segment(5);
 
 if ($id==NULL) redirect('members');
 
-$query = $this->members_model->get_members($id);
-
-$member_role = $this->session->userdata('member_role');
-
 $team = $this->session->userdata('teamdata');
+$member_role = $this->session->userdata('member_role');
+$member_language = $this->session->userdata('member_language');
 
+if ($member_role != MEMBER_ROLE_ADMINISTRATOR)
+{
+    if ($member_role != MEMBER_ROLE_COORDINATION || $member_language != $team->id)
+    {
+        redirect('');
+    }        
+}
+
+$query = $this->members_model->get_members($id);
 
 $roles  = unserialize(MEMBER_ROLES);
 $states = unserialize(MEMBER_STATES);

@@ -5,10 +5,17 @@ if ($id==NULL) redirect('members');
 
 $query = $this->members_model->get_members($id);
 
+$team = $this->session->userdata('teamdata');
 $member_role = $this->session->userdata('member_role');
+$member_language = $this->session->userdata('member_language');
 
-$roles  = unserialize(MEMBER_ROLES);
-$states = unserialize(MEMBER_STATES);
+if ($member_role != MEMBER_ROLE_ADMINISTRATOR)
+{
+    if ($member_role != MEMBER_ROLE_COORDINATION || $member_language != $team->id)
+    {
+        redirect('');
+    }        
+}
 
 ?>
 

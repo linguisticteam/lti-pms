@@ -1,8 +1,19 @@
 <?php
 $id = $this->uri->segment(3);
-$team_langcode = $this->uri->segment(4);
 
 if ($id==NULL) redirect('members');
+
+$team = $this->session->userdata('teamdata');
+$member_role = $this->session->userdata('member_role');
+$member_language = $this->session->userdata('member_language');
+
+if ($member_role != MEMBER_ROLE_ADMINISTRATOR)
+{
+    if ($member_role != MEMBER_ROLE_COORDINATION || $member_language != $team->id)
+    {
+        redirect('');
+    }        
+}
 
 $member_name = $this->session->userdata('member_name');
 $member_email = $this->session->userdata('member_email');
@@ -65,7 +76,6 @@ $query = $this->members_model->get_members($id);
             <?php echo $this->email->print_debugger(); ?>
             <a class="close-reveal-modal">&#215;</a>
         </div>
-
         
     </div>
 </div>
