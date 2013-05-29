@@ -56,7 +56,7 @@ if (!empty($videos_inprogress))
                               '<input name="tipo'.$i.'" type="radio" class="star" value="5" disabled="disabled" '.($item->priority==5?'checked="checked"':'').'/>'
                               .'</div>',
                               $w_l,
-                              $item->duration, $s_d,
+                              '<div style="white-space: nowrap">'.$item->duration.'</div>', '<div style="white-space: nowrap">'.$s_d.'</div>',
                               ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
                               (count($transcribers)>1?implode(", ", $transcribers)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/transcribing','I did it!'):
                                                       $transcribers[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/transcribing','I did it!')):
