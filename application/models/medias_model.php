@@ -126,48 +126,51 @@ class Medias_model extends CI_Model
 
     public function register_function($media_id, $function, $member_id=NULL)
     {
-        //get media
-        $media = $this->get_medias($media_id);
-
-        //get team
-        $member_language = $this->session->userdata('member_language');
-        $member_role = $this->session->userdata('member_role');
-
         //get member
         if ($member_id==NULL)
         {
-            $member_id = $this->session->userdata('member_id');
+            $userinfo = $this->joomlauser->get_user();
+            $member_id = $userinfo->id;
         }
-
-        //check if member belongs to this team
-        if ($member_language==$media->project_language_id || $member_role >= MEMBER_ROLE_COORDINATION)
-        {
-            $this->workgroups_model->register_workgroup($media_id, $member_id, $function);
-        }
+        
+        $this->workgroups_model->register_workgroup($media_id, $member_id, $function);
     }
     
     public function unregister_function($media_id, $function, $member_id)
-    {
-        //get media
-        $media = $this->get_medias($media_id);
-
-        //get team
-        $member_language = $this->session->userdata('member_language');
-        $member_role = $this->session->userdata('member_role');
-
-        //check if member belongs to this team
-        if ($member_language==$media->project_language_id || $member_role >= MEMBER_ROLE_COORDINATION)
+    {        
+        if (is_numeric($member_id)) // deleting users by id
         {
-            if (is_numeric($member_id)) // deleting users by id
-            {
-                $this->db->delete('pms_workgroups', array('media_id' => $media_id, 'function' => $function, 'member_id' => $member_id )); 
-            }
-            else // deleting users by name
-            {
-                $this->db->delete('pms_workgroups', array('media_id' => $media_id, 'function' => $function, 'name' => $member_id )); 
-            }            
+            $this->db->delete('pms_workgroups', array('media_id' => $media_id, 'function' => $function, 'member_id' => $member_id )); 
+        }
+        else // deleting users by name
+        {
+            $this->db->delete('pms_workgroups', array('media_id' => $media_id, 'function' => $function, 'name' => $member_id )); 
         }
     }
+    
+//    public function previous_stage($media_id)
+//    {
+//        $state = $this->medias_model->get_medias($media_id)->state;
+//        
+//        if ($state > STATE_OPEN_FOR_TRANSCRIPTION)
+//        {
+//            $data = array('state'=>$state-1);
+//            $this->db->where('id',$media_id);
+//            $this->db->update('pms_medias',$data);
+//        }
+//    }
+//    
+//    public function next_stage($media_id)
+//    {
+//        $state = $this->medias_model->get_medias($media_id)->state;
+//        
+//        if ($state < STATE_REPOSITORY)
+//        {
+//            $data = array('state'=>$state+1);
+//            $this->db->where('id',$media_id);
+//            $this->db->update('pms_medias',$data);
+//        }
+//    }
 
     public function go_to_stage($media_id, $state, $inc)
     {

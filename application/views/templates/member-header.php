@@ -1,6 +1,14 @@
 <?php    
-    $member_id = $this->session->userdata('member_id');
-    $member_name = $this->session->userdata('member_name');
+$userinfo = $this->joomlauser->get_user();
+
+$member_id = 0;
+$member_name = '';
+
+if (!empty($userinfo))
+{
+    $member_id = $userinfo->id;
+    $member_name = $userinfo->username;
+}
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
@@ -46,22 +54,22 @@
                  <!--Right Nav Section-->
                 <ul class="right">
                     <li class="divider hide-for-small"></li>
-                    <?php
-                    if ($member_name!=NULL)
+                     <?php
+                    if ($member_id==0)
                     {
                     ?>
-                    <li class="has-dropdown"><?php echo anchor('members/view/'.$member_id, '('.$member_name.')' ); ?>
-                        <ul class="dropdown">
-                            <li><?php echo anchor('members/edit_profile/'.$member_id, 'Edit profile' ); ?></li>
-                            <li><?php echo anchor('home/do_logout', 'Sign Out'); ?></li>
-                        </ul>
-                    </li>
+                    <li><?php echo anchor('http://members.linguisticteam.org/', 'Sign In'); ?></li>
                     <?php
                     }
                     else
                     {
                     ?>
-                    <li><?php echo anchor('', '('.$member_name.') Sign In'); ?></li>
+                    <li class="has-dropdown"><?php echo anchor('members/view/'.$member_id, '('.$member_name.')' ); ?>
+                        <ul class="dropdown">
+                            <li><?php echo anchor('members/edit_language/', 'Edit language' ); ?></li>                            
+                        </ul>
+                    </li>
+                    <!--<li><?php echo anchor('', '('.$member_name.')'); ?></li>-->
                     <?php
                     }
                     ?>

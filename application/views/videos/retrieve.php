@@ -12,6 +12,12 @@
 </div>
 
 <?php
+$tmpl = array(
+    'table_open' => '<table class="sortable">',
+    'table_close' => '</table>'
+);
+
+$this->table->set_template($tmpl);
 $this->table->set_heading('#','Title','Status','Category','Location','Original','Final','Duration','Start date','Publish Date','Translators','Proofreaders','Comments','Forum','');
 
 $status = unserialize(VIDEO_STATES);

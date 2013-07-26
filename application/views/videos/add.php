@@ -1,15 +1,11 @@
 <?php
 
 $team = $this->session->userdata('teamdata');
-$member_role = $this->session->userdata('member_role');
-$member_language = $this->session->userdata('member_language');
+$member_id = $userinfo->id;
 
-if ($member_role != MEMBER_ROLE_ADMINISTRATOR)
+if ( !$this->authorization->check_authorization($member_id, AUTH_CAN_ADD_VIDEO))
 {
-    if ($member_role != MEMBER_ROLE_COORDINATION || $member_language != $team->id)
-    {
-        redirect('');
-    }        
+    redirect('');
 }
 
 ?>
@@ -193,7 +189,6 @@ if ($member_role != MEMBER_ROLE_ADMINISTRATOR)
             </div>
 
             <br/>
-
 
 
             <div class="row">

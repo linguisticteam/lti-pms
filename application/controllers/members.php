@@ -1,29 +1,29 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Members extends CI_Controller {
-    
+
     public function __construct()
     {
         parent::__construct();
     }
-    
+
     public function index()
     {
         $langcode = $this->uri->segment(2);
-        
+
         $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
-        
+
         $this->session->set_userdata('teamdata', $team);
-        
+
         $data = array(
             'title' => 'Members',
             'type' => 'team',
             'view' => 'members/retrieve',
-            'members' => $this->members_model->get_members_by_language($team->id),            
+            'members' => $this->members_model->get_members_by_language($team->id),
         );
         $this->load->view('controlpanel',$data);
     }
-    
+
     public function add()
     {
         $langcode = $this->uri->segment(2);
@@ -48,8 +48,8 @@ class Members extends CI_Controller {
         );
 
         $this->load->view('controlpanel',$data);
-    }  
-    
+    }
+
     public function edit()
     {
         $langcode = $this->uri->segment(2);
@@ -60,12 +60,12 @@ class Members extends CI_Controller {
         if ($this->input->post('original_email') != $this->input->post('email'))
         {
             $this->form_validation->set_rules('email','EMAIL','trim|required|valid_email|is_unique[pms_members.email]');
-        }        
+        }
 
         if ($this->form_validation->run()==TRUE):
             $data = elements(array('name','email','language_id',
                                    'dotsub_id','pootle_id','facebook_id','skype_id',
-                                   'state','role','description','date_added'),$this->input->post());            
+                                   'state','role','description','date_added'),$this->input->post());
             $this->members_model->update_member($data,array('id'=>$this->input->post('id')));
         endif;
 
@@ -77,7 +77,7 @@ class Members extends CI_Controller {
 
         $this->load->view('controlpanel',$data);
     }
-    
+
     public function view()
     {
         $data = array(
@@ -87,7 +87,7 @@ class Members extends CI_Controller {
         );
         $this->load->view('controlpanel',$data);
     }
-    
+
     public function edit_profile()
     {
         $this->form_validation->set_rules('name','NAME','trim|required|max_length[255]');
@@ -96,7 +96,7 @@ class Members extends CI_Controller {
 
         if ($this->form_validation->run()==TRUE):
             $data = elements(array('name','password','dotsub_id','pootle_id','facebook_id','skype_id',
-                                   'description'),$this->input->post());     
+                                   'description'),$this->input->post());
             $data['password'] = md5($data['password']);
             $this->members_model->update_member_profile($data,array('id'=>$this->input->post('id')));
         endif;
@@ -109,9 +109,27 @@ class Members extends CI_Controller {
 
         $this->load->view('controlpanel',$data);
     }
-    
+
+    public function edit_language()
+    {
+        $members = $this->members_model->get_members();
+        $userinfo = $this->joomlauser->get_user();
+        $teams = $this->language_teams_model->get_active_language_teams();
+
+        $data = array(
+            'members' => $members,
+            'teams' => $teams,
+            'userinfo' => $userinfo,
+            'title' => 'Edit language',
+            'type' => 'member',
+            'view' => 'members/edit_language'
+        );
+
+        $this->load->view('controlpanel',$data);
+    }
+
     public function send_invitation()
-    {        
+    {
         $data = array(
             'title' => 'View member info',
             'type' => 'member',

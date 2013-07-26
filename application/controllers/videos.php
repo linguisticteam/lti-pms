@@ -21,6 +21,8 @@ class Videos extends CI_Controller {
 
     public function transcribing()
     {
+        $userinfo = $this->joomlauser->get_user();
+        
         $langcode = $this->uri->segment(2);
 
         $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
@@ -31,6 +33,7 @@ class Videos extends CI_Controller {
             'title' => 'Videos open for transcription',
             'type' => 'team',
             'view' => 'videos/transcribing',
+            'userinfo' => $userinfo,
             'videos_inprogress' => $this->medias_model->get_videos_transcribing($team->id),
         );
         $this->load->view('controlpanel',$data);
@@ -60,7 +63,7 @@ class Videos extends CI_Controller {
         $langcode = $this->uri->segment(2);
        
         // I don't know why the method has been called twice.
-        // The second time it has a value of 'js'
+        // The second time it has a value of 'js' so I had to create this workaround
         if ($member_id!='js')        
             $this->medias_model->register_function($media_id, $function, $member_id);
 
@@ -95,6 +98,20 @@ class Videos extends CI_Controller {
 
         $this->load->view('controlpanel',$data);
     }
+    
+//    public function previous_stage()
+//    {
+//        $media_id = $_POST['media_id'];
+//        
+//        $this->medias_model->previous_stage($media_id);
+//    }
+//    
+//    public function next_stage()
+//    {
+//        $media_id = $_POST['media_id'];
+//        
+//        $this->medias_model->next_stage($media_id);
+//    }
     
     public function go_to_stage()
     {
@@ -140,6 +157,8 @@ class Videos extends CI_Controller {
 
     public function open_for_translation()
     {
+        $userinfo = $this->joomlauser->get_user();
+        
         $langcode = $this->uri->segment(2);
 
         $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
@@ -150,7 +169,8 @@ class Videos extends CI_Controller {
             'title' => 'Videos open for translation',
             'type' => 'team',
             'view' => 'videos/open_for_translation',
-            'team' => $this->language_teams_model->get_language_team_by_langcode($langcode),
+            'userinfo' => $userinfo,
+            'team' => $this->language_teams_model->get_language_team_by_langcode($langcode),            
             'videos_inprogress' => $this->medias_model->get_videos_open_for_translation($team->id),
         );
         $this->load->view('controlpanel',$data);
@@ -158,6 +178,8 @@ class Videos extends CI_Controller {
 
     public function in_progress()
     {        
+        $userinfo = $this->joomlauser->get_user();
+        
         $langcode = $this->uri->segment(2);
 
         $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
@@ -168,6 +190,7 @@ class Videos extends CI_Controller {
             'title' => 'Videos in progress',
             'type' => 'team',
             'view' => 'videos/in_progress',
+            'userinfo' => $userinfo,
             'team' => $this->language_teams_model->get_language_team_by_langcode($langcode),
             'videos_inprogress' => $this->medias_model->get_videos_in_progress($team->id),
         );
@@ -176,6 +199,8 @@ class Videos extends CI_Controller {
 
     public function ready_to_post()
     {
+        $userinfo = $this->joomlauser->get_user();
+        
         $langcode = $this->uri->segment(2);
 
         $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
@@ -186,6 +211,7 @@ class Videos extends CI_Controller {
             'title' => 'Videos ready to post',
             'type' => 'team',
             'view' => 'videos/ready_to_post',
+            'userinfo' => $userinfo,
             'team' => $this->language_teams_model->get_language_team_by_langcode($langcode),
             'videos_inprogress' => $this->medias_model->get_videos_ready_to_post($team->id),
         );
@@ -194,6 +220,8 @@ class Videos extends CI_Controller {
 
     public function posted()
     {
+        $userinfo = $this->joomlauser->get_user();
+        
         $langcode = $this->uri->segment(2);
 
         $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
@@ -204,6 +232,7 @@ class Videos extends CI_Controller {
             'title' => 'Videos posted',
             'type' => 'team',
             'view' => 'videos/posted',
+            'userinfo' => $userinfo,
             'team' => $this->language_teams_model->get_language_team_by_langcode($langcode),
             'videos_inprogress' => $this->medias_model->get_videos_posted($team->id),
         );
@@ -212,6 +241,8 @@ class Videos extends CI_Controller {
 
     public function repository()
     {
+        $userinfo = $this->joomlauser->get_user();
+        
         $langcode = $this->uri->segment(2);
 
         $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
@@ -222,6 +253,7 @@ class Videos extends CI_Controller {
             'title' => 'Videos in repository',
             'type' => 'team',
             'view' => 'videos/repository',
+            'userinfo' => $userinfo,
             'team' => $this->language_teams_model->get_language_team_by_langcode($langcode),
             'videos_inprogress' => $this->medias_model->get_videos_repository($team->id),
         );
@@ -230,6 +262,8 @@ class Videos extends CI_Controller {
 
     public function on_hold()
     {
+        $userinfo = $this->joomlauser->get_user();
+        
         $langcode = $this->uri->segment(2);
 
         $team = $this->language_teams_model->get_language_team_by_langcode($langcode);
@@ -240,6 +274,7 @@ class Videos extends CI_Controller {
             'title' => 'Videos on hold',
             'type' => 'team',
             'view' => 'videos/on_hold',
+            'userinfo' => $userinfo,
             'team' => $this->language_teams_model->get_language_team_by_langcode($langcode),
             'videos_inprogress' => $this->medias_model->get_videos_on_hold($team->id),
         );
@@ -248,6 +283,8 @@ class Videos extends CI_Controller {
 
     public function add()
     {
+        $userinfo = $this->joomlauser->get_user();
+        
         $langcode = $this->uri->segment(2);
 
         $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_langcode($langcode));
@@ -270,6 +307,7 @@ class Videos extends CI_Controller {
         $data = array(
             'title' => 'Home',
             'type' => 'team',
+            'userinfo' => $userinfo,
             'view' => 'videos/add'
         );
 
@@ -278,6 +316,8 @@ class Videos extends CI_Controller {
 
     public function edit()
     {
+        $userinfo = $this->joomlauser->get_user();
+        
         $langcode = $this->uri->segment(2);
 
         $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_langcode($langcode));
@@ -300,6 +340,7 @@ class Videos extends CI_Controller {
         $data = array(
             'title' => 'Edit video',
             'type' => 'team',
+            'userinfo' => $userinfo,
             'view' => 'videos/edit'
         );
 

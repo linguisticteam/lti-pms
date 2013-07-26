@@ -9,7 +9,8 @@ class Members_model extends CI_Model
             $this->db->where('id',$id);
         }
 
-        $query = $this->db->get('pms_members');
+        $this->db->order_by("name");
+        $query = $this->db->get('ltimp_users');
 
         $appended_members_array = array();
 
@@ -36,9 +37,9 @@ class Members_model extends CI_Model
     {
         $where = 'media_id = '.$media_id. ' AND function = '. $function. ' AND member_id != 0';
         $this->db->where($where);
-        $this->db->order_by("order", "asc"); 
+        $this->db->order_by("order", "asc");
         $query = $this->db->get('pms_workgroups');
- 
+
        if($query->num_rows() > 0)
         {
             $list = array();
@@ -54,34 +55,37 @@ class Members_model extends CI_Model
             return FALSE;
         }
     }
-    
+
     public function get_members_name_by_function($media_id, $function)
-    {        
+    {
         $list = $this->get_members_by_function($media_id, $function);
         $list_names = array();
-                
+
         if ($list)
         {
             foreach ($list as $row)
             {
-                array_push($list_names,$row->name);
+                if (!empty($row->name))
+                {
+                    array_push($list_names,$row->name);
+                }
             }
         }
         else
         {
             $list_names[0] = "";
         }
-        
+
         return $list_names;
     }
-    
+
     public function get_out_members_by_function($media_id, $function)
     {
         $where = 'media_id = '.$media_id. ' AND function = '. $function. ' AND member_id = 0';
         $this->db->where($where);
-        $this->db->order_by("order", "asc"); 
+        $this->db->order_by("order", "asc");
         $query = $this->db->get('pms_workgroups');
- 
+
        if($query->num_rows() > 0)
         {
             $list = array();
@@ -97,61 +101,51 @@ class Members_model extends CI_Model
             return FALSE;
         }
     }
-    
+
     public function get_members_by_language($language_id)
     {
-        $where = 'language_id = '.$language_id;
-        $this->db->where($where);
-        $this->db->order_by("name", "asc"); 
-        $query = $this->db->get('pms_members');
- 
+        $this->db->order_by("name", "asc");
+        $this->db->join('pms_users_languages', 'pms_users_languages.user_id = ltimp_users.id and pms_users_languages.language_id = '.$language_id);
+        $query = $this->db->get('ltimp_users');
+
         return $query->result();
     }
-    
+
     public function count_members_by_language($language_id)
-    {        
-        $where = 'language_id = '.$language_id.' AND state = '.MEMBER_STATE_ACTIVE;
-        $this->db->where($where);
-        $this->db->from('pms_members');        
+    {
+        $this->db->join('pms_users_languages', 'pms_users_languages.user_id = ltimp_users.id and pms_users_languages.language_id = '.$language_id);
+        $this->db->from('ltimp_users');
 
         return $this->db->count_all_results();
     }
 
-    public function insert_member($data=NULL)
+    public function get_user_languages($user_id)
     {
-        if ($data!=NULL)
+        if ( $user_id != NULL )
         {
-            $this->db->insert('pms_members',$data);
-            
-            $team = $this->session->userdata('teamdata');
-            $this->session->set_userdata('member_added','Member added successfully');
-            
-            redirect('languages/'.$team->langcode.'/members/add');
+            $this->db->select('language_id');
+            $this->db->where('user_id',$user_id);
         }
+
+        $query = $this->db->get('pms_users_languages');
+
+        return  $query->result();
     }
-    
-    public function update_member($data=NULL,$condition=NULL)
+
+    public function set_user_languages($user_id, $language_id, $state)
     {
-        if ($data!=NULL && $condition!=NULL)
+        $data = array(
+                'user_id' => $user_id,
+                'language_id' => $language_id
+        );
+
+        if ($state == 'no')
         {
-            $this->db->update('pms_members',$data,$condition);
-            
-            $team = $this->session->userdata('teamdata');
-            $this->session->set_userdata('member_edited','Member edited successfully');
-            
-            redirect('languages/'.$team->langcode.'/members/edit/'.$condition['id']);
+            $this->db->insert('pms_users_languages', $data);
         }
-    }
-    
-    public function update_member_profile($data=NULL,$condition=NULL)
-    {
-        if ($data!=NULL && $condition!=NULL)
+        else
         {
-            $this->db->update('pms_members',$data,$condition);            
-            
-            $this->session->set_userdata('member_profile_edited','Member profile edited successfully');
-            
-            redirect('members/edit_profile/'.$condition['id']);
+            $this->db->delete('pms_users_languages', $data);
         }
     }
 }

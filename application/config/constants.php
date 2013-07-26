@@ -118,6 +118,49 @@ define('MEDIA_SUBTYPE_UNKNOWN', 0);
 
 /************ MEMBERS ************/
 
+define('GROUP_COORDINATION_GROUP',      16);
+
+define('GROUP_LANGUAGE_TEAM_MEMBER',    9);
+define('GROUP_ENGLISH_TRANSCRIBER',     10);
+define('GROUP_ENGLISH_PROOFREADER',     11);
+define('GROUP_TIMESTAMP_ADJUSTER',      22);
+define('GROUP_FINAL_REVIEWER',          14);
+
+define('GROUP_TRANSLATOR',              12);
+define('GROUP_TRANSLATION_PROOFREADER', 13);
+
+define('GROUP_SUPPORT_GROUPS',          15);
+define('GROUP_PROJECT_COORDINATOR',     17);
+define('GROUP_TECHNICAL_TEAM_MEMBER',   18);
+define('GROUP_PR_GROUP_MEMBER',         19);
+define('GROUP_DEVELOPMENT_GROUP',       20);
+define('GROUP_ADMIN_GROUP',             21);
+define('GROUP_PR_GROUP_COORDINATOR',    23);
+define('GROUP_TECHTEAM_COORDINATOR',    24);
+
+define('GROUP_SUPER_USERS',             8);
+
+
+define('AUTH_CAN_EDIT_GROUP',           1);
+define('AUTH_CAN_ADD_VIDEO',            2);
+define('AUTH_CAN_EDIT_VIDEO',           3);
+
+define('AUTH_CAN_ENGLISH_TRANSCRIBE',   4);
+define('AUTH_CAN_ENGLISH_FIRST_PROOF',  5);
+define('AUTH_CAN_ENGLISH_TIMESTAMP',    6);
+define('AUTH_CAN_ENGLISH_POST_PROOF',   7);
+define('AUTH_CAN_ENGLISH_FINAL_REVIEW', 8);
+
+define('AUTH_CAN_TEAM_TRANSLATE_VIDEO', 9);
+define('AUTH_CAN_TEAM_PROOFREAD_VIDEO', 10);
+
+define('AUTH_CAN_EDIT_USERS_LANGUAGES', 11);
+
+define('AUTH_CAN_VIEW_START_DATE',      12);
+
+
+
+
 
 define('FUNCTION_TRANSCRIBE', 0);
 define('FUNCTION_FIRST_PROOFREAD', 1);

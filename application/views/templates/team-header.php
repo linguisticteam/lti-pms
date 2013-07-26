@@ -1,9 +1,20 @@
 <?php
-    $team = $this->session->userdata('teamdata');
-    $member_id = $this->session->userdata('member_id');
-    $member_name = $this->session->userdata('member_name');
-    $member_role = $this->session->userdata('member_role');
-    $member_language = $this->session->userdata('member_language');
+
+$userinfo = $this->joomlauser->get_user();
+
+$member_id = 0;
+$member_name = '';
+
+if (!empty($userinfo))
+{
+    $member_id = $userinfo->id;
+    $member_name = $userinfo->username;
+    $member_role = $userinfo->usertype;
+}
+    
+$team = $this->session->userdata('teamdata');
+    
+    
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
@@ -32,6 +43,7 @@
 
         <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
         <script src="http://code.jquery.com/ui/1.8.24/jquery-ui.js"></script>
+        <script src="<?php echo base_url(); ?>js/sorttable.js"></script>
 
     </head>
 
@@ -48,8 +60,9 @@
             <section class="top-bar-section">
                 <ul class="left">
                     <li class="divider"></li>
-                    <?php
-                    if ( ($member_role>=MEMBER_ROLE_COORDINATION && $member_language==$team->id) || ($member_role==MEMBER_ROLE_ADMINISTRATOR) )
+                    <?php                    
+
+                    if ( $this->authorization->check_authorization($member_id, AUTH_CAN_EDIT_GROUP) )
                     {
                     ?>
                     <li class="has-dropdown"><?php echo anchor('languages/'.$team->langcode, $team->name); ?>
@@ -79,15 +92,21 @@
                                 <li><?php echo anchor('languages/'.$team->langcode.'/videos/open_for_translation', 'Open for translation'); ?></li>
                             <?php
                             }
+                            
+                            if ($team->team_permissions!=TEAM_CAN_TRANSCRIBE)
+                            {
                             ?>
                             <li><label>Translation</label></li>
                             <li><?php echo anchor('languages/'.$team->langcode.'/videos/in_progress', 'In progress'); ?></li>
                             <li><?php echo anchor('languages/'.$team->langcode.'/videos/ready_to_post', 'Ready to post'); ?></li>
                             <li><?php echo anchor('languages/'.$team->langcode.'/videos/posted', 'Posted'); ?></li>
                             <li><?php echo anchor('languages/'.$team->langcode.'/videos/repository', 'Repository'); ?></li>
-                            <li><?php echo anchor('languages/'.$team->langcode.'/videos/on_hold', 'On hold'); ?></li>
+                            <li><?php echo anchor('languages/'.$team->langcode.'/videos/on_hold', 'On hold'); ?></li>                            
+                            <?php
+                            }
+                            ?>
 
-                            <?php if ($team->team_permissions==TEAM_CAN_TRANSCRIBE && $member_role==MEMBER_ROLE_ADMINISTRATOR){ ?>
+                            <?php if ($team->team_permissions==TEAM_CAN_TRANSCRIBE && ($this->authorization->check_authorization($member_id, AUTH_CAN_ADD_VIDEO)) ){ ?>
                             <li class="divider"></li>
                             <li><?php echo anchor('languages/'.$team->langcode.'/videos/add', 'Add video'); ?></li>
                             <?php
@@ -95,52 +114,32 @@
                             ?>
                         </ul>
                     </li>
-                    <li class="divider"></li>
-                    <?php
-                    if ($member_role>=MEMBER_ROLE_COORDINATION)
-                    {
-                    ?>
-                    <li class="has-dropdown"><?php echo anchor('languages/'.$team->langcode.'/members', 'Members'); ?>
-                        
-                        <?php
-                        if ( ($member_role>=MEMBER_ROLE_COORDINATION && $member_language==$team->id) || ($member_role==MEMBER_ROLE_ADMINISTRATOR) )
-                        {
-                        ?>
-                        <ul class="dropdown">
-                            <li><?php echo anchor('languages/'.$team->langcode.'/members/add', 'Add member'); ?></li>
-                        </ul>
-                        <?php
-                        }
-                        ?>
-                    </li>
-                    <li class="divider"></li>
-                    <?php
-                    }
-                    ?>
                 </ul>
 
                  <!--Right Nav Section-->
                 <ul class="right">
                     <li class="divider hide-for-small"></li>
+                    
                     <?php
-                    if ($member_name!=NULL)
+                    if ($member_id==0)
                     {
                     ?>
-                    <li class="has-dropdown"><?php echo anchor('/members/view/'.$member_id, '('.$member_name.')' ); ?>
-                        <ul class="dropdown">
-                            <li><?php echo anchor('members/edit_profile/'.$member_id, 'Edit profile' ); ?></li>
-                            <li><?php echo anchor('home/do_logout', 'Sign Out'); ?></li>
-                        </ul>
-                    </li>
+                    <li><?php echo anchor('http://members.linguisticteam.org/', 'Sign In'); ?></li>
                     <?php
                     }
                     else
                     {
                     ?>
-                    <li><?php echo anchor('', 'Sign In'); ?></li>
+                    <li class="has-dropdown"><?php echo anchor('members/view/'.$member_id, '('.$member_name.')' ); ?>
+                        <ul class="dropdown">
+                            <li><?php echo anchor('members/edit_language/', 'Edit language' ); ?></li>                            
+                        </ul>
+                    </li>
+                    <!--<li><?php echo anchor('', '('.$member_name.')'); ?></li>-->
                     <?php
                     }
-                    ?>
+                    ?>                   
+                    
                 </ul>
             </section>
         </nav>

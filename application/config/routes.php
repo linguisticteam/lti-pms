@@ -59,6 +59,12 @@ $route['languages/(:any)/members'] = "members";
 $route['languages/(:any)/configuration'] = "languages/configuration";
 $route['languages/(:any)'] = "languages";
 
+$route['user_language'] = "user_language";
+$route['videos/previous_stage'] = "videos/previous_stage";
+$route['videos/next_stage'] = "videos/next_stage";
+
+
+
 //languages/english-team/videos/inprogress
 //$route['languages/([a-z]+)'] = "languages";
 //echo $route['languages/english-team'];

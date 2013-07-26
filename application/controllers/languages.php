@@ -10,13 +10,19 @@ class Languages extends CI_Controller {
     public function index()
     {
         $langcode = $this->uri->segment(2);
+        
+        if (empty($langcode))
+            $langcode = 'eng';
 
         $this->session->set_userdata('teamdata', $this->language_teams_model->get_language_team_by_langcode($langcode) );
+        
+        $userinfo = $this->joomlauser->get_user();
 
         $data = array(
             'title' => 'Home',
             'type' => 'team',
             'view' => 'templates/team',
+            'userinfo' => $userinfo,
             'language_teams' => $this->language_teams_model->get_language_teams(),
         );
         $this->load->view('controlpanel',$data);

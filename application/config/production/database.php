@@ -49,8 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';//root
-$db['default']['password'] = '';//
+$db['default']['username'] = 'lingteam';//root
+$db['default']['password'] = 'lingteam';//
 $db['default']['database'] = 'ltimp';//lti
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';

@@ -1,8 +1,19 @@
 <?php
+$member_id = 0;
+
+if (!empty($userinfo))
+{
+    $member_id = $userinfo->id;
+}
 
 $team = $this->session->userdata('teamdata');
-$member_role = $this->session->userdata('member_role');
 
+$tmpl = array(
+    'table_open' => '<table class="sortable">',
+    'table_close' => '</table>'
+);
+
+$this->table->set_template($tmpl);
 $this->table->set_heading('#','Title','Status','Cat','Priority','Location','Duration','Start date','Publish date',
                           'Translators','Proofreaders','Forum','Notes',"");
 
@@ -36,7 +47,7 @@ if (!empty($videos_inprogress))
         $f = (!empty($item->forum_thread)) ? '<a href="'.$item->forum_thread.'" target="_blank">go</a>' : '';
         $n = (!empty($item->notes)) ? '<a href="'.$item->notes.'" target="_blank">go</a>' : '';
 
-        $this->table->add_row($i, 
+        $this->table->add_row('#'.$item->parent_id, 
                               '<span title="'.$item->description.'"><a href="'.$item->original_location.'" target="_blank"><strong>'.$item->title.'</strong></a></span>', 
                               $states[$item->state], $categories[$item->category],
                               '<div style="white-space: nowrap">'.
@@ -48,17 +59,16 @@ if (!empty($videos_inprogress))
                               .'</div>',
                               $w_l,
                               '<div style="white-space: nowrap">'.$item->duration.'</div>', '<div style="white-space: nowrap">'.$s_d.'</div>', '<div style="white-space: nowrap">'.$s_f.'</div>',
-                              ($member_role >= MEMBER_ROLE_TRANSLATOR)?
+                              ($this->authorization->check_authorization($member_id, AUTH_CAN_TEAM_TRANSLATE_VIDEO))?
                               (count($translators)>1?implode(", ", $translators)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/on_hold','I did it!'):
                                                      $translators[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/on_hold','I did it!')):
                               (count($translators)>1?implode(", ", $translators):$translators[0]),
-                              ($member_role >= MEMBER_ROLE_TRANSLATOR)?
+                              ($this->authorization->check_authorization($member_id, AUTH_CAN_TEAM_PROOFREAD_VIDEO))?
                               (count($proofreaders)>1?implode(", ", $proofreaders)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/on_hold','I did it!'):
                                                       $proofreaders[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/on_hold','I did it!')):
                               (count($proofreaders)>1?implode(", ", $proofreaders):$proofreaders[0]),
-                              $f, $n,
-            //                "<span title='$item->comments'>read</span>",
-                              ($member_role >= MEMBER_ROLE_COORDINATION)?
+                              $f, $n,            
+                              ($this->authorization->check_authorization($member_id, AUTH_CAN_EDIT_VIDEO))?
                               (anchor('languages/'.$team->langcode.'/videos/edit/'.$item->id,'[Edit]')):
                               (""));
         $i++;

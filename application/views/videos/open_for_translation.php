@@ -1,8 +1,19 @@
 <?php
+$member_id = 0;
+
+if (!empty($userinfo))
+{
+    $member_id = $userinfo->id;
+}
 
 $team = $this->session->userdata('teamdata');
-$member_role = $this->session->userdata('member_role');
 
+$tmpl = array(
+    'table_open' => '<table class="sortable">',
+    'table_close' => '</table>'
+);
+
+$this->table->set_template($tmpl);
 $this->table->set_heading('#','Title','Status','Cat','Priority','Location','Duration','Start date',
                           'Transcribers','First Proofreading.','Timestamp','Post-Proofreading','Final review','Forum','Notes',"");
 
@@ -45,7 +56,7 @@ if (!empty($videos_inprogress))
         $f = (!empty($item->forum_thread)) ? '<a href="'.$item->forum_thread.'" target="_blank">go</a>' : '';
         $n = (!empty($item->notes)) ? '<a href="'.$item->notes.'" target="_blank">go</a>' : '';
 
-        $this->table->add_row($i,
+        $this->table->add_row('#'.$item->id,
                               '<span title="'.$item->description.'"><a href="'.$item->original_location.'" target="_blank"><strong>'.$item->title.'</strong></a></span>',
                               $states[$item->state], $categories[$item->category],
                               '<div style="white-space: nowrap">'.
@@ -57,28 +68,28 @@ if (!empty($videos_inprogress))
                               .'</div>',
                               $w_l,
                               '<div style="white-space: nowrap">'.$item->duration.'</div>', '<div style="white-space: nowrap">'.$s_d.'</div>',
-                              ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
+                              ($this->authorization->check_authorization($member_id, AUTH_CAN_ENGLISH_TRANSCRIBE))?
                               (count($transcribers)>1?implode(", ", $transcribers)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/open_for_translation','I did it!'):
                                                       $transcribers[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/open_for_translation','I did it!')):
                               (count($transcribers)>1?implode(", ", $transcribers):$transcribers[0]),
-                              ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
+                              ($this->authorization->check_authorization($member_id, AUTH_CAN_ENGLISH_FIRST_PROOF))?
                               (count($first_proofs)>1?implode(", ", $first_proofs)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FIRST_PROOFREAD.'/open_for_translation','I did it!'):
                                                       $first_proofs[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FIRST_PROOFREAD.'/open_for_translation','I did it!')):
                               (count($first_proofs)>1?implode(", ", $first_proofs):$first_proofs[0]),
-                              ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
+                              ($this->authorization->check_authorization($member_id, AUTH_CAN_ENGLISH_TIMESTAMP))?
                               (count($time_stamper)>1?implode(", ", $time_stamper)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TIMESTAMP.'/open_for_translation','I did it!'):
                                                       $time_stamper[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TIMESTAMP.'/open_for_translation','I did it!')):
                               (count($time_stamper)>1?implode(", ", $time_stamper):$time_stamper[0]),
-                              ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
+                              ($this->authorization->check_authorization($member_id, AUTH_CAN_ENGLISH_POST_PROOF))?
                               (count($final_proofs)>1?implode(", ", $final_proofs)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_PROOFREAD.'/open_for_translation','I did it!'):
                                                       $final_proofs[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_PROOFREAD.'/open_for_translation','I did it!')):
                               (count($final_proofs)>1?implode(", ", $final_proofs):$final_proofs[0]),
-                              ($member_role >= MEMBER_ROLE_TRANSCRIBER)?
+                              ($this->authorization->check_authorization($member_id, AUTH_CAN_ENGLISH_FINAL_REVIEW))?
                               (count($final_review)>1?implode(", ", $final_review)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_REVIEW.'/open_for_translation','I did it!'):
                                                       $final_review[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_REVIEW.'/open_for_translation','I did it!')):
                               (count($final_review)>1?implode(", ", $final_review):$final_review[0]),
                               $f, $n,
-                              ($member_role >= MEMBER_ROLE_COORDINATION)?
+                              ($this->authorization->check_authorization($member_id, AUTH_CAN_EDIT_VIDEO))?
                               (anchor('languages/'.$team->langcode.'/videos/edit/'.$item->id,'[Edit]')):
                               (""));
         $i++;

@@ -52,7 +52,8 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database','form_validation','session','table','email');
+//$autoload['libraries'] = array('database','form_validation','session','table','email');
+$autoload['libraries'] = array('database','form_validation','session','table','email','joomlauser','authorization');
 
 
 /*
@@ -109,7 +110,8 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('language_teams_model','medias_model','members_model','login_model','workgroups_model');
+//$autoload['model'] = array('language_teams_model','medias_model','members_model','login_model','workgroups_model','authorization_model');
+$autoload['model'] = array('language_teams_model','medias_model','members_model','workgroups_model','authorization_model');
 
 
 /* End of file autoload.php */
