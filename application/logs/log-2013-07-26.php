@@ -1441,3 +1441,914 @@ DEBUG - 2013-07-26 22:19:12 --> File loaded: application/views/templates/home-fo
 DEBUG - 2013-07-26 22:19:12 --> File loaded: application/views/controlpanel.php
 DEBUG - 2013-07-26 22:19:12 --> Final output sent to browser
 DEBUG - 2013-07-26 22:19:12 --> Total execution time: 0.5292
+DEBUG - 2013-07-26 22:28:09 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:09 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:09 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:09 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:09 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:09 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:09 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:09 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:09 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:10 --> File loaded: application/views/videos/open_for_translation.php
+DEBUG - 2013-07-26 22:28:10 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:10 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:10 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:10 --> Total execution time: 0.8641
+DEBUG - 2013-07-26 22:28:10 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:10 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:10 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:10 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:10 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:10 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:10 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:10 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:10 --> Controller Class Initialized
+ERROR - 2013-07-26 22:28:10 --> 404 Page Not Found --> videos/js
+DEBUG - 2013-07-26 22:28:18 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:18 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:18 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:18 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:18 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:18 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:18 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:18 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:18 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:19 --> File loaded: application/views/videos/transcribing.php
+DEBUG - 2013-07-26 22:28:19 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:19 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:19 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:19 --> Total execution time: 1.0913
+DEBUG - 2013-07-26 22:28:19 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:19 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:19 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:19 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:19 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:19 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:19 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:19 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:19 --> Controller Class Initialized
+ERROR - 2013-07-26 22:28:19 --> 404 Page Not Found --> videos/js
+DEBUG - 2013-07-26 22:28:22 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:22 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:22 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:22 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:22 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:22 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:22 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:22 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:22 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:23 --> File loaded: application/views/videos/edit.php
+DEBUG - 2013-07-26 22:28:23 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:23 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:23 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:23 --> Total execution time: 1.1726
+DEBUG - 2013-07-26 22:28:23 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:23 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:23 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:23 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:23 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:23 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:23 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:23 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:23 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:24 --> File loaded: application/views/templates/team-header.php
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 18
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 52
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 63
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 80
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 80
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 80
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 80
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 80
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 95
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 104
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 105
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 106
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 107
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 108
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 122
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 137
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 148
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 159
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 170
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 181
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 194
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 219
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 242
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 273
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 279
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 285
+ERROR - 2013-07-26 22:28:24 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\videos\edit.php 338
+DEBUG - 2013-07-26 22:28:24 --> DB Transaction Failure
+ERROR - 2013-07-26 22:28:24 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND function = 0 AND member_id != 0
+ORDER BY `order` asc' at line 3
+DEBUG - 2013-07-26 22:28:24 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2013-07-26 22:28:27 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:27 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:27 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:27 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:27 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:27 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:27 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:27 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:27 --> File loaded: application/views/videos/edit.php
+DEBUG - 2013-07-26 22:28:27 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:27 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:27 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:27 --> Total execution time: 0.8074
+DEBUG - 2013-07-26 22:28:27 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:27 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:27 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:27 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:27 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:27 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:27 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:27 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:27 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:28 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:28 --> File loaded: application/views/videos/edit.php
+DEBUG - 2013-07-26 22:28:28 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:28 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:28 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:28 --> Total execution time: 0.8377
+DEBUG - 2013-07-26 22:28:28 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:28 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:28 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:28 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:28 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:28 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:28 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:28 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:28 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:28 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:28 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:28 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:28 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:28 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:28 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:29 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:29 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:29 --> File loaded: application/views/videos/edit.php
+DEBUG - 2013-07-26 22:28:29 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:29 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:29 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:29 --> Total execution time: 0.8234
+DEBUG - 2013-07-26 22:28:29 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:29 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:29 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:29 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:29 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:29 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:29 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:29 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:29 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:30 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:30 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:30 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:30 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:30 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:30 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:30 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:30 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:30 --> File loaded: application/views/videos/edit.php
+DEBUG - 2013-07-26 22:28:30 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:30 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:30 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:30 --> Total execution time: 0.8361
+DEBUG - 2013-07-26 22:28:31 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:31 --> File loaded: application/views/videos/edit.php
+DEBUG - 2013-07-26 22:28:31 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:31 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:31 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:31 --> Total execution time: 0.8457
+DEBUG - 2013-07-26 22:28:31 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:31 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:31 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:31 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:31 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:31 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:31 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:31 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:31 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:32 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:32 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:32 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:32 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:32 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:32 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:32 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:32 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:32 --> File loaded: application/views/videos/edit.php
+DEBUG - 2013-07-26 22:28:32 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:32 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:32 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:32 --> Total execution time: 0.8963
+DEBUG - 2013-07-26 22:28:32 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:32 --> File loaded: application/views/videos/edit.php
+DEBUG - 2013-07-26 22:28:32 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:32 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:32 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:32 --> Total execution time: 0.8337
+DEBUG - 2013-07-26 22:28:33 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:33 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:33 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:33 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:33 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:33 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:33 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:33 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:33 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:33 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:33 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:33 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:33 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:33 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:33 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:33 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:33 --> File loaded: application/views/videos/edit.php
+DEBUG - 2013-07-26 22:28:33 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:33 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:33 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:33 --> Total execution time: 0.9030
+DEBUG - 2013-07-26 22:28:34 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:34 --> File loaded: application/views/videos/edit.php
+DEBUG - 2013-07-26 22:28:34 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:34 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:34 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:34 --> Total execution time: 0.8647
+DEBUG - 2013-07-26 22:28:34 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:34 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:34 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:34 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:34 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:34 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:34 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:34 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:34 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:35 --> File loaded: application/views/videos/edit.php
+DEBUG - 2013-07-26 22:28:35 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:35 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:35 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:35 --> Total execution time: 0.8427
+DEBUG - 2013-07-26 22:28:36 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:36 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:36 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:36 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:36 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:36 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:36 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:36 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:36 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:37 --> File loaded: application/views/videos/edit.php
+DEBUG - 2013-07-26 22:28:37 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:37 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:37 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:37 --> Total execution time: 0.9724
+DEBUG - 2013-07-26 22:28:37 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:37 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:37 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:37 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:37 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:37 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:37 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:37 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:37 --> Controller Class Initialized
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 193
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 196
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 197
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 198
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 199
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 200
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 203
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 204
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 205
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 206
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 207
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 208
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 209
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 211
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 212
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 213
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 214
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 215
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 217
+ERROR - 2013-07-26 22:28:37 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\models\medias_model.php 219
+DEBUG - 2013-07-26 22:28:37 --> DB Transaction Failure
+ERROR - 2013-07-26 22:28:37 --> Query error: Column 'title' cannot be null
+DEBUG - 2013-07-26 22:28:37 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2013-07-26 22:28:41 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:41 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:41 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:41 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:41 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:41 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:41 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:41 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:41 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:28:42 --> File loaded: application/views/videos/open_for_translation.php
+DEBUG - 2013-07-26 22:28:42 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:28:42 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:28:42 --> Final output sent to browser
+DEBUG - 2013-07-26 22:28:42 --> Total execution time: 1.0741
+DEBUG - 2013-07-26 22:28:42 --> Config Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:28:42 --> URI Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Router Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Output Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Security Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Input Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:28:42 --> Language Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:28:42 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:28:42 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:28:42 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Session Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:28:42 --> Session routines successfully run
+DEBUG - 2013-07-26 22:28:42 --> Table Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Email Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Model Class Initialized
+DEBUG - 2013-07-26 22:28:42 --> Controller Class Initialized
+ERROR - 2013-07-26 22:28:42 --> 404 Page Not Found --> videos/js
+DEBUG - 2013-07-26 22:30:31 --> Config Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:30:31 --> URI Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Router Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> No URI present. Default controller set.
+DEBUG - 2013-07-26 22:30:31 --> Output Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Security Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Input Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:30:31 --> Language Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:30:31 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:30:31 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:30:31 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Session Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:30:31 --> Session routines successfully run
+DEBUG - 2013-07-26 22:30:31 --> Table Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Email Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:30:31 --> File loaded: application/views/templates/home-header.php
+DEBUG - 2013-07-26 22:30:31 --> File loaded: application/views/templates/home.php
+DEBUG - 2013-07-26 22:30:31 --> File loaded: application/views/templates/home-footer.php
+DEBUG - 2013-07-26 22:30:31 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:30:31 --> Final output sent to browser
+DEBUG - 2013-07-26 22:30:31 --> Total execution time: 0.5548
+DEBUG - 2013-07-26 22:30:34 --> Config Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:30:34 --> URI Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Router Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Output Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Security Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Input Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:30:34 --> Language Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:30:34 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:30:34 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:30:34 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Session Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:30:34 --> Session routines successfully run
+DEBUG - 2013-07-26 22:30:34 --> Table Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Email Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:34 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:30:35 --> File loaded: application/views/templates/team.php
+DEBUG - 2013-07-26 22:30:35 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:30:35 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:30:35 --> Final output sent to browser
+DEBUG - 2013-07-26 22:30:35 --> Total execution time: 1.0976
+DEBUG - 2013-07-26 22:30:35 --> Config Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:30:35 --> URI Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Router Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Output Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Security Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Input Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:30:35 --> Language Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:30:35 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:30:35 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:30:35 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Session Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:30:35 --> Session routines successfully run
+DEBUG - 2013-07-26 22:30:35 --> Table Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Email Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:35 --> Controller Class Initialized
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team-header.php 26
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team-header.php 68
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team-header.php 68
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team-header.php 70
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team-header.php 84
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team-header.php 87
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team-header.php 96
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team-header.php 100
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team-header.php 101
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team-header.php 102
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team-header.php 103
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team-header.php 104
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team-header.php 109
+DEBUG - 2013-07-26 22:30:36 --> File loaded: application/views/templates/team-header.php
+ERROR - 2013-07-26 22:30:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\joomla\pms\application\views\templates\team.php 5
+DEBUG - 2013-07-26 22:30:36 --> DB Transaction Failure
+ERROR - 2013-07-26 22:30:36 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+DEBUG - 2013-07-26 22:30:36 --> Language file loaded: language/english/db_lang.php
+DEBUG - 2013-07-26 22:30:38 --> Config Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:30:38 --> URI Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Router Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Output Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Security Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Input Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:30:38 --> Language Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:30:38 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:30:38 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:30:38 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Session Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:30:38 --> Session routines successfully run
+DEBUG - 2013-07-26 22:30:38 --> Table Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Email Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Controller Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> File loaded: application/views/templates/team-header.php
+DEBUG - 2013-07-26 22:30:38 --> File loaded: application/views/videos/in_progress.php
+DEBUG - 2013-07-26 22:30:38 --> File loaded: application/views/templates/team-footer.php
+DEBUG - 2013-07-26 22:30:38 --> File loaded: application/views/controlpanel.php
+DEBUG - 2013-07-26 22:30:38 --> Final output sent to browser
+DEBUG - 2013-07-26 22:30:38 --> Total execution time: 0.8309
+DEBUG - 2013-07-26 22:30:38 --> Config Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Hooks Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Utf8 Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> UTF-8 Support Enabled
+DEBUG - 2013-07-26 22:30:38 --> URI Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Router Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Output Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Security Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Input Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-07-26 22:30:38 --> Language Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Loader Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Helper loaded: url_helper
+DEBUG - 2013-07-26 22:30:38 --> Helper loaded: form_helper
+DEBUG - 2013-07-26 22:30:38 --> Helper loaded: array_helper
+DEBUG - 2013-07-26 22:30:38 --> Database Driver Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Form Validation Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Session Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Helper loaded: string_helper
+DEBUG - 2013-07-26 22:30:38 --> Session routines successfully run
+DEBUG - 2013-07-26 22:30:38 --> Table Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Email Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Model Class Initialized
+DEBUG - 2013-07-26 22:30:38 --> Controller Class Initialized
+ERROR - 2013-07-26 22:30:38 --> 404 Page Not Found --> videos/js

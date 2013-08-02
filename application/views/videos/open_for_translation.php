@@ -17,6 +17,17 @@ $this->table->set_template($tmpl);
 $this->table->set_heading('#','Title','Status','Cat','Priority','Location','Duration','Start date',
                           'Transcribers','First Proofreading.','Timestamp','Post-Proofreading','Final review','Forum','Notes',"");
 
+if ($this->authorization->check_authorization($member_id, AUTH_CAN_VIEW_START_DATE))
+{
+    $this->table->set_heading('#','Cat','Title','Status','Duration','Forum','Transcript','Proof-1',
+                          'Timeshift','Post-Proof','Final Rev','Location','Start Date',"");
+}
+else
+{
+    $this->table->set_heading('#','Cat','Title','Status','Duration','Forum','Transcript','Proof-1',
+                              'Timeshift','Post-Proof','Final Rev','Location',"");
+}
+
 $states = unserialize(MEDIA_STATES);
 $categories = unserialize(MEDIA_CATEGORIES);
 
@@ -57,17 +68,12 @@ if (!empty($videos_inprogress))
         $n = (!empty($item->notes)) ? '<a href="'.$item->notes.'" target="_blank">go</a>' : '';
 
         $this->table->add_row('#'.$item->id,
+                              $categories[$item->category],
                               '<span title="'.$item->description.'"><a href="'.$item->original_location.'" target="_blank"><strong>'.$item->title.'</strong></a></span>',
-                              $states[$item->state], $categories[$item->category],
-                              '<div style="white-space: nowrap">'.
-                              '<input name="tipo'.$i.'" type="radio" class="star required" value="1" disabled="disabled" '.($item->priority==1?'checked="checked"':'').'/>'.
-                              '<input name="tipo'.$i.'" type="radio" class="star" value="2" disabled="disabled" '.($item->priority==2?'checked="checked"':'').'/>'.
-                              '<input name="tipo'.$i.'" type="radio" class="star" value="3" disabled="disabled" '.($item->priority==3?'checked="checked"':'').'/>'.
-                              '<input name="tipo'.$i.'" type="radio" class="star" value="4" disabled="disabled" '.($item->priority==4?'checked="checked"':'').'/>'.
-                              '<input name="tipo'.$i.'" type="radio" class="star" value="5" disabled="disabled" '.($item->priority==5?'checked="checked"':'').'/>'
-                              .'</div>',
-                              $w_l,
-                              '<div style="white-space: nowrap">'.$item->duration.'</div>', '<div style="white-space: nowrap">'.$s_d.'</div>',
+                              $states[$item->state],
+                              '<div style="white-space: nowrap">'.$item->duration.'</div>', 
+                              $f,
+                              
                               ($this->authorization->check_authorization($member_id, AUTH_CAN_ENGLISH_TRANSCRIBE))?
                               (count($transcribers)>1?implode(", ", $transcribers)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/open_for_translation','I did it!'):
                                                       $transcribers[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSCRIBE.'/open_for_translation','I did it!')):
@@ -88,7 +94,19 @@ if (!empty($videos_inprogress))
                               (count($final_review)>1?implode(", ", $final_review)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_REVIEW.'/open_for_translation','I did it!'):
                                                       $final_review[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_FINAL_REVIEW.'/open_for_translation','I did it!')):
                               (count($final_review)>1?implode(", ", $final_review):$final_review[0]),
-                              $f, $n,
+                              $w_l,
+                              ($this->authorization->check_authorization($member_id, AUTH_CAN_VIEW_START_DATE))?
+                              '<div style="white-space: nowrap">'.$s_d.'</div>':'',  
+                
+//                              '<div style="white-space: nowrap">'.
+//                              '<input name="tipo'.$i.'" type="radio" class="star required" value="1" disabled="disabled" '.($item->priority==1?'checked="checked"':'').'/>'.
+//                              '<input name="tipo'.$i.'" type="radio" class="star" value="2" disabled="disabled" '.($item->priority==2?'checked="checked"':'').'/>'.
+//                              '<input name="tipo'.$i.'" type="radio" class="star" value="3" disabled="disabled" '.($item->priority==3?'checked="checked"':'').'/>'.
+//                              '<input name="tipo'.$i.'" type="radio" class="star" value="4" disabled="disabled" '.($item->priority==4?'checked="checked"':'').'/>'.
+//                              '<input name="tipo'.$i.'" type="radio" class="star" value="5" disabled="disabled" '.($item->priority==5?'checked="checked"':'').'/>'
+//                              .'</div>',                                                            
+//                              $n,
+                
                               ($this->authorization->check_authorization($member_id, AUTH_CAN_EDIT_VIDEO))?
                               (anchor('languages/'.$team->langcode.'/videos/edit/'.$item->id,'[Edit]')):
                               (""));
