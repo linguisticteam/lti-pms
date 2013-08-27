@@ -13,7 +13,7 @@
 
 <?php
 $tmpl = array(
-    'table_open' => '<table class="sortable">',
+    'table_open' => '<table class="sortable" style="width: 100%">',
     'table_close' => '</table>'
 );
 

@@ -482,7 +482,7 @@ if ($is_original)
             </div>
         </div>
         <div class="large-2 columns">
-            <?php echo form_label('Final Proofreaders'); ?>
+            <?php echo form_label('Post-proofreaders'); ?>
             <div class="row">
                 <div class="small-9 columns">
                     <select id="final_proofs" name="final_proofs" class="medium">
@@ -739,7 +739,7 @@ else
 }
 ?>
     <div class="row collapse">
-       <div class="small-3 small-centered columns">
+       <div class="small-4 small-centered columns">
            <?php
            $states = unserialize(MEDIA_STATES);
            echo '<p><span class="label" id="currentStatus">Current status: <strong>' . $states[$query->state] . '</strong></span></p>';
@@ -752,10 +752,10 @@ else
 if ($is_original)
 {
     ?>
-    <div class="row collapse">
-        <div class="large-6 small-centered columns">            
+    <div class="row">
+        <div class="large-4 small-centered columns">            
             <?php
-            echo '<div class="button-bar" style="margin: 0px auto;width: 50%; white-space: nowrap">';
+            echo '<div class="button-bar" style="margin: 0px auto;width: 100%; white-space: nowrap">';
             echo '<ul class="button-group round .even-2">';
 
             if ($query->state > STATE_OPEN_FOR_TRANSCRIPTION && $query->state < STATE_FINAL_REVIEW_COMPLETED)
@@ -774,10 +774,10 @@ if ($is_original)
 else
 {
     ?>
-    <div class="row collapse">
-        <div class="large-6 small-centered columns">
+    <div class="row">
+        <div class="large-4 small-centered columns">
             <?php
-            echo '<div class="button-bar" style="margin: 0px auto;width: 50%; white-space: nowrap">';
+            echo '<div class="button-bar" style="margin: 0px auto;width: 100%; white-space: nowrap">';
             echo '<ul class="button-group round .even-2">';
 
             if ($query->state > STATE_OPEN_FOR_TRANSLATION && $query->state < STATE_POSTED)

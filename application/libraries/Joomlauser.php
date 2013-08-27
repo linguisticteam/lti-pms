@@ -6,11 +6,21 @@ class Joomlauser
 {
     var $CI; //create CI instance so we can access libraries
 //    var $get_user_url = 'http://members.linguisticteam.org/scripts/get_joomla_user.php';
-    var $get_user_url = 'http://localhost/joomla/get_joomla_user.php';
+    var $get_user_url = 'http://members.linguisticteam.org/get_joomla_user.php';
 
     function __construct()
     {
         $this->CI = & get_instance();
+        
+        if (ENVIRONMENT == 'production')
+        {
+            $get_user_url = 'http://members.linguisticteam.org/get_joomla_user.php';            
+        }
+        else
+        {
+            $get_user_url = 'http://localhost/joomla/get_joomla_user.php';
+        }
+            
     }
     
     function get_user()

@@ -20,6 +20,9 @@
         <script src="<?php echo base_url(); ?>js/foundation/foundation.topbar.js"></script>
         <script>
         $(document).foundation();
+        $(document)
+  .foundation()
+  .foundation('topbar', {stickyClass: 'sticky-top-bar'});
         </script>
     </body>
 </html>

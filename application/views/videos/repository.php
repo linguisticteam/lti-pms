@@ -1,3 +1,5 @@
+<div style="width: 100%">
+
 <?php
 $member_id = 0;
 
@@ -9,13 +11,13 @@ if (!empty($userinfo))
 $team = $this->session->userdata('teamdata');
 
 $tmpl = array(
-    'table_open' => '<table class="sortable">',
+    'table_open' => '<table class="sortable" style="width: 100%">',
     'table_close' => '</table>'
 );
 
 $this->table->set_template($tmpl);
-$this->table->set_heading('#','Title','Status','Cat','Priority','Location','Duration','Start date','Publish date',
-                          'Translators','Proofreaders','Forum','Notes',"");
+$this->table->set_heading('#','Title','Status','Cat','Location','Duration','Start date','Publish date',
+                          'Translators','Proofreaders','Forum',"");
 
 $states = unserialize(MEDIA_STATES);
 $categories = unserialize(MEDIA_CATEGORIES);
@@ -28,8 +30,7 @@ if (!empty($videos_inprogress))
         $videos = $videos_inprogress;
     else
         array_push($videos, $videos_inprogress);
-
-    $i = 1;
+    
     foreach ($videos as $item):
 
         $translators = merge_members($this->members_model->get_members_name_by_function($item->id,FUNCTION_TRANSLATE), 
@@ -46,32 +47,57 @@ if (!empty($videos_inprogress))
 
         $f = (!empty($item->forum_thread)) ? '<a href="'.$item->forum_thread.'" target="_blank">go</a>' : '';
         $n = (!empty($item->notes)) ? '<a href="'.$item->notes.'" target="_blank">go</a>' : '';
+        
+        if (strlen($item->parent_id) == 1)
+            $id_item = '#'.'000'.$item->parent_id;
+        else if (strlen($item->parent_id) == 2)
+            $id_item = '#'.'00'.$item->parent_id;
+        else if (strlen($item->parent_id) == 3)
+            $id_item = '#'.'0'.$item->parent_id;
+        else
+            $id_item = '#'.$item->parent_id;  
 
-        $this->table->add_row('#'.$item->parent_id, 
+        $this->table->add_row(
+                              // id
+                              $id_item,
+                              // title  
                               '<span title="'.$item->description.'"><a href="'.$item->original_location.'" target="_blank"><strong>'.$item->title.'</strong></a></span>', 
-                              $states[$item->state], $categories[$item->category],
-                              '<div style="white-space: nowrap">'.
-                              '<input name="tipo'.$i.'" type="radio" class="star required" value="1" disabled="disabled" '.($item->priority==1?'checked="checked"':'').'/>'.
-                              '<input name="tipo'.$i.'" type="radio" class="star" value="2" disabled="disabled" '.($item->priority==2?'checked="checked"':'').'/>'.
-                              '<input name="tipo'.$i.'" type="radio" class="star" value="3" disabled="disabled" '.($item->priority==3?'checked="checked"':'').'/>'.
-                              '<input name="tipo'.$i.'" type="radio" class="star" value="4" disabled="disabled" '.($item->priority==4?'checked="checked"':'').'/>'.
-                              '<input name="tipo'.$i.'" type="radio" class="star" value="5" disabled="disabled" '.($item->priority==5?'checked="checked"':'').'/>'
-                              .'</div>',
+                              // state
+                              '<img src="'.base_url().'/img/state_'.$item->state.'.png">',
+                              // category  
+                              $categories[$item->category],
+                              // priority
+//                              '<div style="white-space: nowrap">'.
+//                              '<input name="tipo'.$i.'" type="radio" class="star required" value="1" disabled="disabled" '.($item->priority==1?'checked="checked"':'').'/>'.
+//                              '<input name="tipo'.$i.'" type="radio" class="star" value="2" disabled="disabled" '.($item->priority==2?'checked="checked"':'').'/>'.
+//                              '<input name="tipo'.$i.'" type="radio" class="star" value="3" disabled="disabled" '.($item->priority==3?'checked="checked"':'').'/>'.
+//                              '<input name="tipo'.$i.'" type="radio" class="star" value="4" disabled="disabled" '.($item->priority==4?'checked="checked"':'').'/>'.
+//                              '<input name="tipo'.$i.'" type="radio" class="star" value="5" disabled="disabled" '.($item->priority==5?'checked="checked"':'').'/>'
+//                              .'</div>',
+                              // working location
                               $w_l,
-                              '<div style="white-space: nowrap">'.$item->duration.'</div>', '<div style="white-space: nowrap">'.$s_d.'</div>', '<div style="white-space: nowrap">'.$s_f.'</div>',
+                              // duration
+                              '<div style="white-space: nowrap"><small>'.$item->duration.'</small></div>', 
+                              // start date
+                              '<div style="white-space: nowrap"><small>'.$s_d.'</small></div>', 
+                              // finish date
+                              '<div style="white-space: nowrap"><small>'.$s_f.'</small></div>',
+                              // translators
                               ($this->authorization->check_authorization($member_id, AUTH_CAN_TEAM_TRANSLATE_VIDEO))?
-                              (count($translators)>1?implode(", ", $translators)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/repository','I did it!'):
-                                                     $translators[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/repository','I did it!')):
+                              (count($translators)>1?implode(", ", '<small>'.$translators.'</small>')." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/repository','I\'m going in!', array('class' => 'tiny button', 'onclick' => 'open_forum(\''.$item->forum_thread.'\')')):
+                                                     '<small>'.$translators[0].'</small>'." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_TRANSLATE.'/repository','I\'m going in!', array('class' => 'tiny button', 'onclick' => 'open_forum(\''.$item->forum_thread.'\')'))):
                               (count($translators)>1?implode(", ", $translators):$translators[0]),
+                              // proofreaders
                               ($this->authorization->check_authorization($member_id, AUTH_CAN_TEAM_PROOFREAD_VIDEO))?
-                              (count($proofreaders)>1?implode(", ", $proofreaders)." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/repository','I did it!'):
-                                                      $proofreaders[0]." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/repository','I did it!')):
+                              (count($proofreaders)>1?implode(", ", '<small>'.$proofreaders.'</small>')." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/repository','I\'m going in!', array('class' => 'tiny button', 'onclick' => 'open_forum(\''.$item->forum_thread.'\')')):
+                                                      '<small>'.$proofreaders[0].'</small>'." <br/>".anchor('languages/'.$team->langcode.'/videos/register_function/'.$item->id.'/'.FUNCTION_PROOFREAD.'/repository','I\'m going in!', array('class' => 'tiny button', 'onclick' => 'open_forum(\''.$item->forum_thread.'\')'))):
                               (count($proofreaders)>1?implode(", ", $proofreaders):$proofreaders[0]),
-                              $f, $n,            
+                              // forum
+                              $f,    
+                              // edit
                               ($this->authorization->check_authorization($member_id, AUTH_CAN_EDIT_VIDEO))?
-                              (anchor('languages/'.$team->langcode.'/videos/edit/'.$item->id,'[Edit]')):
-                              (""));
-        $i++;
+                              (anchor('languages/'.$team->langcode.'/videos/edit/'.$item->id,'<img src="'.base_url().'/img/edit.png" alt="edit">')):
+                              (""));        
     endforeach;
 
     echo $this->table->generate();
@@ -93,3 +119,28 @@ function merge_members($members, $out_members)
     
     return $members;
 }
+?>
+
+</div>
+
+<script>
+    function previous_stage(id,state)
+    {
+        window.location = "<?php echo base_url() . 'languages/' . $team->langcode; ?>/videos/go_to_stage_table/" + id + "/" + state + "/-1/transcribing";
+        return false;
+    }
+    function next_stage(id,state)
+    {
+        window.location = "<?php echo base_url() . 'languages/' . $team->langcode; ?>/videos/go_to_stage_table/" + id + "/" + state + "/1/transcribing";
+        return false;
+    }
+    function release_video(id)
+    {
+        window.location = "<?php echo base_url() . 'languages/' . $team->langcode; ?>/videos/release_video_table/" + id + "/transcribing";
+        return false;
+    }
+    function open_forum(url)
+    {
+        window.open(url);
+    }
+</script>

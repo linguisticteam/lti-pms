@@ -70,38 +70,44 @@ define('SOCIAL_NETWORKS', serialize (array ( 1 => "Youtube Channel",
 
 define('STATE_DELETED', -1);
 define('STATE_OPEN_FOR_TRANSCRIPTION', 0);
-define('STATE_OPEN_FOR_FIRST_PROOFREADING', 1);
-define('STATE_TIMESTAMP_SHIFTING', 2);
-define('STATE_FINAL_PROOFREADING', 3);
-define('STATE_WAINTING_FINAL_REVIEW', 4);
-define('STATE_FINAL_REVIEW_COMPLETED', 5);
-define('STATE_LOCKED_AND_AVAILABLE', 6);
+define('STATE_IN_TRANSCRIPTION', 1);
+define('STATE_OPEN_FOR_FIRST_PROOFREADING', 2);
+define('STATE_TIMESTAMP_SHIFTING', 3);
+define('STATE_FINAL_PROOFREADING', 4);
+define('STATE_WAINTING_FINAL_REVIEW', 5);
+define('STATE_FINAL_REVIEW_COMPLETED', 6);
+define('STATE_LOCKED_AND_AVAILABLE', 7);
 
-define('STATE_OPEN_FOR_TRANSLATION', 7);
-define('STATE_OPEN_FOR_PROOFREADING', 8);
-define('STATE_FINALIZED', 9);
-define('STATE_POSTED', 10);
-define('STATE_REPOSITORY', 11);
-define('STATE_ON_HOLD', 12);
-define('STATE_UNDER_ERROR_REVIEW', 13);
-define('STATE_UNDER_ERROR_REPAIR', 14);
+define('STATE_OPEN_FOR_TRANSLATION', 8);
+define('STATE_IN_TRANSLATION', 9);
+define('STATE_OPEN_FOR_PROOFREADING', 10);
+define('STATE_IN_PROOFREADING', 11);
+define('STATE_FINALIZED', 12);
+define('STATE_POSTED', 13);
+define('STATE_REPOSITORY', 14);
+define('STATE_ON_HOLD', 15);
+define('STATE_UNDER_ERROR_REVIEW', 16);
+define('STATE_UNDER_ERROR_REPAIR', 17);
 
 define('MEDIA_STATES', serialize (array ( -1 => "Deleted",
                                           0 => "Open for transcription",
-                                          1 => "Open for first proofreading",
-                                          2 => "Time-stamp shifting",
-                                          3 => "Final proofreading",
-                                          4 => "Waiting final review",
-                                          5 => "Final review completed",
-                                          6 => "Locked and available",
-                                          7 => "Open for translation",
-                                          8 => "Open for proofreading",
-                                          9 => "Finalized",
-                                          10 => "Posted",
-                                          11 => "Repository",
-                                          12 => "On hold",
-                                          13 => "Under error review",
-                                          14 => "Under error repair" )));
+                                          1 => "In transcription",
+                                          2 => "Open for first proofreading",
+                                          3 => "Time-stamp shifting",
+                                          4 => "Post-proofreading",
+                                          5 => "Waiting final review",
+                                          6 => "Final review completed",
+                                          7 => "Locked and available",
+                                          8 => "Open for translation",
+                                          9 => "In translation",
+                                          10 => "Open for proofreading",
+                                          11 => "In proofreading",
+                                          12 => "Finalized",
+                                          13 => "Posted",
+                                          14 => "Repository",
+                                          15 => "On hold",
+                                          16 => "Under error review",
+                                          17 => "Under error repair" )));
 
 define('MEDIA_CATEGORIES', serialize (array ( 1 => "TZM",
                                               2 => "PJ",
