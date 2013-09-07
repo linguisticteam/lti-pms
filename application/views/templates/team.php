@@ -34,7 +34,7 @@ if ($team->team_permissions==TEAM_CAN_TRANSCRIBE)
     $this->table->add_row('Videos in transcribing', '<strong>'.$v_stage_00.'</strong>');
     $this->table->add_row('Videos open for first proofreading', '<strong>'.$v_stage_01.'</strong>');
     $this->table->add_row('Videos in timestamp shifting', '<strong>'.$v_stage_02.'</strong>');
-    $this->table->add_row('Videos in final proofreading', '<strong>'.$v_stage_03.'</strong>');
+    $this->table->add_row('Videos in post-proofreading', '<strong>'.$v_stage_03.'</strong>');
     $this->table->add_row('Videos waiting final review', '<strong>'.$v_stage_04.'</strong>');
     $this->table->add_row('Videos on final review completed', '<strong>'.$v_stage_05.'</strong>');
     $this->table->add_row('Videos locked and available', '<strong>'.$v_stage_06.'</strong>');

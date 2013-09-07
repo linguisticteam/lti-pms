@@ -184,7 +184,7 @@ if ($is_original)
             </div>
         </div>
         <div class="large-2 columns">
-            <?php echo form_label('Final Proofreaders'); ?>
+            <?php echo form_label('Post-proofreaders'); ?>
             <div class="row">
                 <div class="small-9 columns">
                     <select id="final_proofs" name="final_proofs" class="medium">

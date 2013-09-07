@@ -87,7 +87,7 @@ $team = $this->session->userdata('teamdata');
                     {
                         ?>
                             <li><label>Transcription</label></li>
-                            <li><?php echo anchor('languages/' . $team->langcode . '/videos/transcribing', 'Transcribing'); ?></li>
+                            <li><?php echo anchor('languages/' . $team->langcode . '/videos/transcribing', 'In progress'); ?></li>
                             <li><?php echo anchor('languages/' . $team->langcode . '/videos/open_for_translation', 'Open for translation'); ?></li>
                         <?php
                     }
