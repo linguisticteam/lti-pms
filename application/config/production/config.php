@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://members.linguisticteam.org/pms/';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------
