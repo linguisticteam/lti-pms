@@ -23,7 +23,7 @@ if (!empty($userinfo))
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/general_enclosed_foundicons_ie7.css" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/normalize.css" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/foundation.css" />
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.24/themes/base/jquery-ui.css"/>
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery-ui.css"/>
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery.rating.css" />
 
         <script src="<?php echo base_url(); ?>js/foundation/foundation.js"></script>
@@ -35,8 +35,8 @@ if (!empty($userinfo))
         <script src="<?php echo base_url(); ?>js/vendor/jquery.rating.js"></script>
         <script src="<?php echo base_url(); ?>js/vendor/jquery.rating.pack.js"></script>
 
-        <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
-        <script src="http://code.jquery.com/ui/1.8.24/jquery-ui.js"></script>
+        <script src="<?php echo base_url(); ?>js/jquery-1.8.2.js"></script>
+        <script src="<?php echo base_url(); ?>js/jquery-ui.js"></script>
 
     </head>
 
