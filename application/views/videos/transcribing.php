@@ -60,9 +60,15 @@ if (!empty($videos_inprogress))
                                       $this->members_model->get_out_members_by_function($item->id,FUNCTION_FINAL_REVIEW));
 
 
-        $w_l = (!empty($item->working_location)) ? '<a href="'.$item->working_location.'" target="_blank">go</a> -
-                                                    <a href="' . $item->working_location . '/transcriptInformation/" target="_blank">info</a>' : '';
+        /*$w_l = (!empty($item->working_location)) ? '<a href="'.$item->working_location.'" target="_blank">go</a> -
+                                                    <a href="' . $item->working_location . '/transcriptInformation/" target="_blank">info</a>' : '';*/
 
+        //for now we will hardcode the link to the page in the Portal that embeds the Working Location URLs
+		//we also append proj_id=[id] to the URL. There is a small script in /components/com_wrapper/views/wrapper/tmpl that takes this GET variable and echo's the dotsub location that corresponds to the ID
+		$portal_location = "https://members.linguisticteam.org/englishteam-working-locations";
+		$w_l =	'<a href="' . $portal_location . '?proj_id=' . $item->id . '" target="_blank">go</a> -
+		<a href="' . $item->working_location . '/transcriptInformation/" target="_blank">info</a>';
+        
         $s_d = (substr($item->date_added, 0, 4) == '0000') ? '': $item->date_added;
 
         $f = (!empty($item->forum_thread)) ? '<a href="'.$item->forum_thread.'" target="_blank">go</a>' : '';
