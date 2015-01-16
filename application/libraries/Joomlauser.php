@@ -6,7 +6,7 @@ class Joomlauser
 {
     var $CI; //create CI instance so we can access libraries
 //    var $get_user_url = 'http://members.linguisticteam.org/scripts/get_joomla_user.php';
-    var $get_user_url = 'http://members.linguisticteam.org/get_joomla_user.php';
+    //var $get_user_url = 'http://members.linguisticteam.org/get_joomla_user.php';
 
     function __construct()
     {
@@ -14,7 +14,8 @@ class Joomlauser
         
         if (ENVIRONMENT == 'production')
         {
-            $get_user_url = 'http://members.linguisticteam.org/get_joomla_user.php';            
+            $url_scheme = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+            $this->get_user_url = $url_scheme . $_SERVER['HTTP_HOST'] . '/get_joomla_user.php';          
         }
         else
         {
